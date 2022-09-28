@@ -117,34 +117,6 @@
   #setVariable("$return", $resultList)
 #end
 
-#macro(sectionContentDisplayer $sectionDescription)
-  ## Compute the heading delimiter of the section
-  #set($macro.heading = $stringtool.repeat('=', $sectionDescription.level))
-  #if ($sectionDescription.containsKey('contentTitle'))
-    (% id="$sectionDescription.contentName" %)
-    $macro.heading $sectionDescription.numbering. $sectionDescription.contentTitle $macro.heading
-    ## Display the content
-    {{display reference="$sectionDescription.contentName"/}}
-  #else
-    (% id="$sectionDescription.name" %)
-    $macro.heading $sectionDescription.numbering. $sectionDescription.title $macro.heading
-
-    {{warning}}
-    $services.localization.render('unifieddocument.sheet.noSectionPublished')
-    {{/warning}}
-  #end
-#end
-
-#macro(sectionContentTocDisplayer $sectionDescription)
-  ## Compute the heading delimiter of the section
-  #set($bullets = $stringtool.repeat('*', $sectionDescription.level))
-  #if ($sectionDescription.containsKey('contentTitle'))
-    $bullets [[$sectionDescription.numbering. $sectionDescription.contentTitle&gt;&gt;||anchor="$sectionDescription.contentName"]]
-  #else
-    $bullets [[$sectionDescription.numbering. $sectionDescription.title&gt;&gt;||anchor="$sectionDescription.name"]]
-  #end
-#end
-
 ## Returns the given document's locale, with a fallback to the default locale in case the locale is empty.
 #macro(getDocumentLocale $xdoc $return)
   #set ($macro.locale = "$xdoc.locale")

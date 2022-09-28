@@ -174,7 +174,9 @@
       <category>Information</category>
     </property>
     <property>
-      <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
+      <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.SectionContentTocDisplayer"/}}
+
+{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
 
 {{velocity}}
 #if (!$request.viewer &amp;&amp; $doc.fullName != 'UnifiedDocument.WebHome')

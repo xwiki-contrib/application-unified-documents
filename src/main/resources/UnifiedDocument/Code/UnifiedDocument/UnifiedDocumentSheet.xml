@@ -36,7 +36,9 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
+  <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.SectionContentDisplayer"/}}
+
+{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
 
 {{velocity}}
 #set ($object = $doc.getObject('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass'))
