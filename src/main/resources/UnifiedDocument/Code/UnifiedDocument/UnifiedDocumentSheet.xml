@@ -1,0 +1,137 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSheet" locale="">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentSheet</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
+
+{{velocity}}
+#set ($object = $doc.getObject('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass'))
+#if (!$object)
+  #set ($messageKey = 'unifieddocument.sheet.description')
+  #set ($messageType = 'info')
+  #if ($doc.documentReference.name != 'UnifiedDocumentSheet')
+    #set ($messageKey = 'unifieddocument.sheet.noObject')
+    #set ($messageType = 'warning')
+  #end
+  {{$messageType}}
+  $services.localization.render($messageKey)
+  {{/$messageType}}
+  #stop
+#end
+#set ($discard = $xwiki.jsfx.use('uicomponents/edit/editableProperty.js', {
+  'forceSkinAction': true,
+  'language': $xcontext.locale
+}))
+#set ($discard = $doc.use($object))
+#set ($editing = $xcontext.action == 'edit')
+#set ($displayGlossaryEntries = $xcontext.action == "export" || "$!{request.displayGlossaryEntries}" == '1')
+#if ($editing || $request.action == 'configure')
+  {{html wiki="true" clean="false"}}
+  &lt;div class="xform"&gt;
+    &lt;dl&gt;
+      &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+          class="editableProperty"
+          data-property="$escapetool.xml($services.model.serialize($object.getProperty('title').reference))"
+          data-property-type="object"#end&gt;
+        &lt;label#if ($editing) for="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_0_title"#end&gt;
+          $escapetool.xml($doc.displayPrettyName('title', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('title')&lt;/dd&gt;
+      &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+          class="editableProperty"
+          data-property="$escapetool.xml($services.model.serialize($object.getProperty('category').reference))"
+          data-property-type="object"#end&gt;
+        &lt;label#if ($editing) for="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_0_category"#end&gt;
+          $escapetool.xml($doc.displayPrettyName('category', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('category')&lt;/dd&gt;
+      &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+          data-property="$escapetool.xml($services.model.serialize($object.getProperty('sections').reference))"
+          data-property-type="object"#end&gt;
+        &lt;label#if ($editing) for="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_0_sections"#end&gt;
+          $escapetool.xml($doc.displayPrettyName('sections', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('sections')&lt;/dd&gt;
+      &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+          data-property="$escapetool.xml($services.model.serialize($object.getProperty('contentSpace').reference))"
+          data-property-type="object"#end&gt;
+        &lt;label#if ($editing) for="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_0_contentSpace"#end&gt;
+          $escapetool.xml($doc.displayPrettyName('contentSpace', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('contentSpace')&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+  {{/html}}
+#else
+  ## Display the complete unified document
+  #getDocumentLocale($tdoc $locale)
+  ## Compute the location of the section contents
+  #set($sectionContentSpace = $doc.getValue('contentSpace'))
+  ## Get the last document update date, which will be used for the cache ID
+  #set($lastUnifiedDocumentUpdate = $tdoc.date.time)
+  #getLastSectionUpdateDate($doc.documentReference, $locale, $sectionContentSpace, $lastSectionUpdate)
+  #set($cacheId = "$!{doc.fullName}-$!{locale}-$!{lastUnifiedDocumentUpdate}-$!{lastSectionUpdate}-$!{xcontext.action}")
+
+  #if ($displayGlossaryEntries)
+    #set($discard = $xcontext.put('glossary-anchors-Glossary', true))
+  #end
+  {{cache id="~{~{velocity~}~}$cacheId~{~{/velocity~}~}" timeToLive="86400"}}
+  {{velocity}}
+  #getSections($doc.documentReference $sections)
+  ## Get the last document update date, which will be used for the cache ID
+  #set($lastUpdate = $tdoc.date.time)
+  #foreach ($section in $sections)
+    #displaySectionEntries($section $locale 1 $foreach.count 'sectionContentDisplayer' $sectionContentSpace)
+  #end
+  {{/velocity}}
+  {{/cache}}
+
+  #if ($displayGlossaryEntries)
+  (% style="page-break-before: always;" %)
+  ((()))
+
+  = $services.localization.render('unifieddocument.glossary') =
+
+  {{glossaryEntries entryNameHeaderLevel="4"/}}
+  #end
+#end
+{{/velocity}}</content>
+</xwikidoc>

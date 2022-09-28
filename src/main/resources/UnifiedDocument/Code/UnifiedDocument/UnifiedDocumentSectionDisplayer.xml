@@ -1,0 +1,379 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionDisplayer" locale="">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentSectionDisplayer</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>UnifiedDocumentSectionDisplayer</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity}}
+#set ($discard = $xwiki.linkx.use($services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'tree.min.css', {'evaluate': true}), {'type': 'text/css', 'rel': 'stylesheet'}))
+#set($discard = $xwiki.jsx.use('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionDisplayer'))
+(% class="unifiedDocumentSectionsTree" data-document="$escapetool.xml($doc.fullName)" #if ($type == 'edit')data-editable="true"#end%)(((
+)))
+#if ($type == 'edit')
+{{html clean="false"}}
+&lt;div id="unifiedDocumentAddSectionModal" class="modal fade" role="dialog"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-label="$services.localization.render('unifieddocument.sections.modal.close')"&gt;
+          &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="modal-title"&gt;$services.localization.render('unifieddocument.sections.modal.title')&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body xform"&gt;
+        &lt;dl style="margin-left: 0px"&gt;
+          &lt;dt&gt;&lt;label for="newSectionName"&gt;$services.localization.render('unifieddocument.sections.modal.newSectionName')&lt;/label&gt;&lt;/dt&gt;
+          &lt;dd&gt;&lt;input type="text" id="newSectionName" name="newSectionName"/&gt;&lt;/dd&gt;
+        &lt;dl&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;input type="hidden" name="sectionParent"/&gt;
+        &lt;button class="btn btn-default" data-action="cancel" data-dismiss="modal"&gt;$services.localization.render('unifieddocument.sections.modal.cancel')&lt;/button&gt;
+        &lt;button class="btn btn-primary" data-action="submit"&gt;$services.localization.render('unifieddocument.sections.modal.submit')&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{{/html}}
+#end
+{{/velocity}}</content>
+  <object>
+    <name>UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionDisplayer</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>723fe58d-1512-424d-98cf-584f9e9c2c4a</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <defaultValue>long</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>require.config({
+  paths: {
+    jsTree: "$!services.webjars.url('jstree', 'jstree.min.js')",
+    JobRunner: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-job-webjar', 'jobRunner.min.js')",
+    xtree: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'tree.min.js')"
+  },
+  shim: {
+    jsTree: {
+      deps: ['jquery']
+    }
+  }
+});
+
+
+require(['xtree', 'xwiki-selectize'], function($) {
+  const unifiedDocumentSectionServiceURL = "$xwiki.getURL('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionService', 'get', 'outputSyntax=plain')";
+  const emptyTreeNodeLabel = "$services.localization.render('unifieddocument.sections.empty')";
+  const emptyTreeNodeId = 'emptyNode';
+
+  $(function() {
+    $('.unifiedDocumentSectionsTree').each(function(index) {
+      var treeContainer = $(this);
+      var editable = (typeof treeContainer.attr('data-editable') !== typeof undefined &amp;&amp; treeContainer.attr('data-editable') !== false)
+      var plugins = (editable) ? ['dnd', 'unique', 'contextmenu'] : ['unique'];
+      var modal = $('#unifiedDocumentAddSectionModal');
+
+      if (editable) {
+        // Prevent the page to be "saved while merging changes", which could bring some conflicts. For this, we reset the last edit date of the document
+        var formContainer = treeContainer.parents('form');
+        var hasFormSave = (formContainer.find('input[name="forceSave"]').length &gt; 0);
+        var forceSaveInput = $('&lt;input/&gt;');
+        if (hasFormSave) {
+          forceSaveInput = formContainer.find('input[name="forceSave"]');
+        }
+        forceSaveInput.val('override');
+        if (!hasFormSave) {
+          forceSaveInput.attr('type', 'hidden');
+          forceSaveInput.attr('name', 'forceSave')
+          formContainer.append(forceSaveInput);
+        }
+
+        // Setup the modal
+        var modalSubmitButton = modal.find('button[data-action="submit"]');
+        var modalParentField = modal.find('input[name="sectionParent"]');
+        var modalSectionField = modal.find('input[name="newSectionName"]');
+        modalSubmitButton.on('click', function(e) {
+          e.preventDefault();
+          modal.modal('toggle');
+          var notification = new XWiki.widgets.Notification("$services.localization.render('unifieddocument.sections.addingNewSection')", 'inprogress');
+          $.ajax(unifiedDocumentSectionServiceURL, {
+            'type': 'GET',
+            'data': {
+              'document': treeContainer.attr('data-document'),
+              'parent': modalParentField.val(),
+              'section': modalSectionField.val(),
+              'action': 'add'
+            },
+            'success': function(result) {
+              notification.hide();
+              var tree = $.jstree.reference(treeContainer);
+              tree.create_node(modalParentField.val(), result);
+              // If the node that was added is the first node in the tree, we need to remove the "empty node" that we are using when the tree is empty
+              tree.delete_node({id: emptyTreeNodeId});
+            },
+            'error': function(result) {
+              notification.hide();
+              new XWiki.widgets.Notification("$services.localization.render('unifieddocument.sections.failedToAddSection')", 'error');
+            }
+          });
+        });
+
+        // Setup the section suggest
+        var newSectionNameSuggestSettings = {
+          'load': function(typedText, callback) {
+            $.getJSON(unifiedDocumentSectionServiceURL, {
+                'text': typedText,
+                'document': treeContainer.attr('data-document'),
+                'action': 'suggest'
+            }).success(callback).fail(callback);
+          },
+          'maxItems': 1
+        };
+        $('input[name="newSectionName"]').xwikiSelectize(newSectionNameSuggestSettings);
+      }
+
+      $(this).xtree({
+        'core': {
+          'check_callback': true,
+          'data': function (obj, callback) {
+            // We define a specific function so that we handle the case where the tree is empty
+            $.ajax(unifiedDocumentSectionServiceURL, {
+              'method': 'get',
+              'data': {
+                'document': treeContainer.attr('data-document'),
+                'action': 'get'
+              }
+            }).success(function(data) {
+              if (data.length === 0) {
+                // In the case where the returned dataset is empty, we need to introduce a special "empty" node
+                callback.call(this, [{id: emptyTreeNodeId, text: emptyTreeNodeLabel}]);
+              } else {
+                callback.call(this, data);
+              }
+            }).error(function(data) {
+              console.log('Error while loading the sections tree');
+              console.log(data);
+            });
+		  }
+        },
+        'contextmenu': {
+          'items': function(node) {
+            var addAction = {
+              'label': "$services.localization.render('unifieddocument.sections.tree.add')",
+              'icon': 'fa fa-plus',
+              'action': function(obj) {
+                if (node.id === emptyTreeNodeId) {
+                  modal.find('input[name="sectionParent"]').attr('value', '#');
+                } else {
+                  modal.find('input[name="sectionParent"]').attr('value', node.id);
+                }
+                modal.modal();
+              }
+            };
+
+            var removeAction = {
+              'label': "$services.localization.render('unifieddocument.sections.tree.remove')",
+              'icon': 'fa fa-trash',
+              'action': function(obj) {
+                new XWiki.widgets.ConfirmationBox({
+                  onYes: function() {
+                    var notification = new XWiki.widgets.Notification("$services.localization.render('unifieddocument.sections.removingSection')", 'inprogress');
+                    var tree = $.jstree.reference(treeContainer);
+                    $.ajax(unifiedDocumentSectionServiceURL, {
+                      'type': 'GET',
+                      'data': {
+                        'document': treeContainer.attr('data-document'),
+                        'objectNumber': node.li_attr.objectNumber,
+                        'action': 'remove'
+                      },
+                     'success': function(result) {
+                       notification.hide();
+                       tree.delete_node(node);
+
+                       // If the node that was removed is the last node in the tree, we need to add the "empty node".
+                       if (tree.get_json(null, {flat: true}).length === 0) {
+                         tree.create_node('#', {id: emptyTreeNodeId, text: emptyTreeNodeLabel});
+                       }
+                     },
+                     'error': function(result) {
+                       notification.hide();
+                       new XWiki.widgets.Notification("$services.localization.render('unifieddocument.sections.failedToRemoveSection')", 'error');
+                     }
+                   });
+                  }
+                }, {
+                  confirmationText: "$services.localization.render('unifieddocument.sections.tree.remove.confirm')",
+                  yesButtonText: "$services.localization.render('unifieddocument.sections.tree.remove.confirm.yes')",
+                  noButtonText: "$services.localization.render('unifieddocument.sections.tree.remove.confirm.no')"
+                });
+              }
+            };
+
+            if (node.id === emptyTreeNodeId || node.children.length !== 0) {
+              return { 'add': addAction };
+            } else {
+              return { 'add': addAction, 'remove': removeAction };
+            }
+          }
+        },
+        'dnd': {
+          'is_draggable': editable
+        },
+        'plugins': plugins
+      }).bind('ready.jstree', function (e, data) {
+        $(this).jstree('open_all');
+      });
+    });
+  });
+
+  function exportElementProperty(container, name, value) {
+    var newInput = $('&lt;input/&gt;');
+    newInput.attr('type', 'hidden');
+    newInput.attr('name', name);
+    newInput.attr('value', value);
+    container.append(newInput);
+  }
+
+  function exportElements(container, element, parent, level, numbering) {
+    var elementPropertyPrefix = "UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass_" + element['li_attr']['objectNumber'] + "_";
+    exportElementProperty(container, elementPropertyPrefix + 'section', element['li_attr']['id']);
+    exportElementProperty(container, elementPropertyPrefix + 'level', level);
+    exportElementProperty(container, elementPropertyPrefix + 'numbering', numbering);
+    exportElementProperty(container, elementPropertyPrefix + 'parent', parent);
+    element['children'].forEach(function(child, index) {
+      exportElements(container, child, element['li_attr']['id'], level + 1, index);
+    });
+  }
+
+  document.observe("xwiki:actions:beforeSave", function(event) {
+    // Create input fields for each element of the tree of sections
+    $('.unifiedDocumentSectionsTree').each(function(index) {
+      var currentTree = $.jstree.reference($(this));
+      var treeElement = currentTree.element.parent();
+      currentTree.get_json().forEach(function (element, elIndex) {
+        exportElements(treeElement, element, '', 1, elIndex);
+      });
+    });
+  });
+});</code>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+</xwikidoc>

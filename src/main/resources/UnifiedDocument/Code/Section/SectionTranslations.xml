@@ -1,0 +1,113 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.Section.SectionTranslations" locale="">
+  <web>UnifiedDocument.Code.Section</web>
+  <name>SectionTranslations</name>
+  <language/>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+UnifiedDocument.Code.Section.SectionClass_title=Title
+
+# Sheet keys
+section.sheet.description=This page controls how Section name pages are displayed in both view and edit modes.
+section.sheet.noObject=The current page doesn't have the expected Sections object.
+section.sheet.noFields=The Section names application doesn't have any fields to display.
+
+# Live table generic keys
+section.livetable.doc.title=Page Title
+section.livetable.doc.name=Page Name
+section.livetable.doc.space=Space
+section.livetable.doc.fullname=Page full name
+section.livetable.doc.location=Location
+section.livetable.doc.author=Last Author
+section.livetable.doc.creator=Creator
+section.livetable.doc.date=Date
+section.livetable.doc.creationDate=Creation Date
+section.livetable._avatar=Avatar
+section.livetable._images=Images
+section.livetable._attachments=Attachments
+section.livetable._actions=Actions
+section.livetable._actions.edit=Edit
+section.livetable._actions.delete=Delete
+section.livetable.emptyvalue=-
+
+# Live table specific keys
+section.livetable.title=Title
+
+# Other keys
+section.entry.name=Section name
+section.entry.create.hint=Section name page
+section.entries.title=Section names
+
+# Deprecated keys
+section.dataSpace.title=Data
+</content>
+  <object>
+    <name>UnifiedDocument.Code.Section.SectionTranslations</name>
+    <number>0</number>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>468615a2-910b-4a93-a8fc-21e37f66fd50</guid>
+    <class>
+      <name>XWiki.TranslationDocumentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <scope>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>1</number>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+    </class>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+  </object>
+</xwikidoc>

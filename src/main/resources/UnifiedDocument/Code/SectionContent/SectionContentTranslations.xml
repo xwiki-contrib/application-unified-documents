@@ -1,0 +1,138 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.SectionContent.SectionContentTranslations" locale="">
+  <web>UnifiedDocument.Code.SectionContent</web>
+  <name>SectionContentTranslations</name>
+  <language/>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+UnifiedDocument.Code.SectionContent.SectionContentClass_title=Title
+UnifiedDocument.Code.SectionContent.SectionContentClass_content=Content
+UnifiedDocument.Code.SectionContent.SectionContentClass_section=Section name
+
+# Sheet keys
+sectioncontent.sheet.description=This page controls how Section pages are displayed in both view and edit modes.
+sectioncontent.sheet.noObject=The current page doesn't have the expected Section Contents object.
+sectioncontent.sheet.noFields=The Section application doesn't have any fields to display.
+
+## Information tab keys
+sectioncontent.info.section=Section name
+sectioncontent.info.noSection=No section name
+sectioncontent.info.unifiedDocuments=Unified Documents
+sectioncontent.info.noUnifiedDocument=No unified documents
+
+# Live table generic keys
+sectioncontent.livetable.doc.title=Page Title
+sectioncontent.livetable.doc.name=Page Name
+sectioncontent.livetable.doc.space=Space
+sectioncontent.livetable.doc.fullname=Page full name
+sectioncontent.livetable.doc.location=Location
+sectioncontent.livetable.doc.author=Last Author
+sectioncontent.livetable.doc.creator=Creator
+sectioncontent.livetable.doc.date=Date
+sectioncontent.livetable.doc.creationDate=Creation Date
+sectioncontent.livetable._avatar=Avatar
+sectioncontent.livetable._images=Images
+sectioncontent.livetable._attachments=Attachments
+sectioncontent.livetable._actions=Actions
+sectioncontent.livetable._actions.edit=Edit
+sectioncontent.livetable._actions.delete=Delete
+sectioncontent.livetable.emptyvalue=-
+
+# Live table specific keys
+sectioncontent.livetable.title=Title
+sectioncontent.livetable.content=Content
+sectioncontent.livetable.section=Section name
+
+# Other keys
+sectioncontent.entry.name=Section
+sectioncontent.entry.create.hint=Section page
+sectioncontent.entries.title=Sections
+
+# Deprecated keys
+sectioncontent.dataSpace.title=Data
+
+# Keys used when creating a new section
+sectioncontent.sectionAvailable=This section is available
+sectioncontent.sectionUnavailable=This section is not available
+
+# Translation panel
+sectioncontent.translationPanel.title=Translations
+sectioncontent.translationPanel.bulkCreateTranslations=Bulk-translate
+sectioncontent.translationPanel.modal.title=Bulk-translate
+sectioncontent.translationPanel.modal.create=Translate
+sectioncontent.translationPanel.modal.close=Close
+sectioncontent.translationPanel.modal.selectTranslation=Select translation to create or update
+sectioncontent.translationPanel.modal.existingTranslation=Existing translation: &lt;a href="{0}"&gt;{1}&lt;/a&gt;
+sectioncontent.translationPanel.modal.noTranslation=No existing translation
+sectioncontent.translation.history.translate=Automated translation from {0}
+sectioncontent.translation.history.attachmentReset=Reset attachments</content>
+  <object>
+    <name>UnifiedDocument.Code.SectionContent.SectionContentTranslations</name>
+    <number>0</number>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>259ef698-7d29-4268-853b-137f97c7f8bb</guid>
+    <class>
+      <name>XWiki.TranslationDocumentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <scope>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>1</number>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+    </class>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+  </object>
+</xwikidoc>

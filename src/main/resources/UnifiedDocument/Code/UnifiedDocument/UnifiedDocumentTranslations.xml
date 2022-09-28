@@ -1,0 +1,146 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations" locale="">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentTranslations</name>
+  <language/>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Title
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Category
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Section names
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Content space
+
+# Sheet keys
+unifieddocument.sheet.description=This page controls how Unified Documents pages are displayed in both view and edit modes.
+unifieddocument.sheet.noObject=The current page doesn't have the expected Unified Documents object.
+unifieddocument.sheet.noFields=The Unified Documents application doesn't have any fields to display.
+unifieddocument.sheet.noSectionPublished=This section is not published.
+
+# Live table generic keys
+unifieddocument.livetable.doc.title=Page Title
+unifieddocument.livetable.doc.name=Page Name
+unifieddocument.livetable.doc.space=Space
+unifieddocument.livetable.doc.fullname=Page full name
+unifieddocument.livetable.doc.location=Location
+unifieddocument.livetable.doc.author=Last Author
+unifieddocument.livetable.doc.creator=Creator
+unifieddocument.livetable.doc.date=Date
+unifieddocument.livetable.doc.creationDate=Creation Date
+unifieddocument.livetable._avatar=Avatar
+unifieddocument.livetable._images=Images
+unifieddocument.livetable._attachments=Attachments
+unifieddocument.livetable._actions=Actions
+unifieddocument.livetable._actions.edit=Edit
+unifieddocument.livetable._actions.delete=Delete
+unifieddocument.livetable.emptyvalue=-
+
+# Live table specific keys
+unifieddocument.livetable.title=Title
+unifieddocument.livetable.category=Category
+unifieddocument.livetable.sections=Section names
+
+# Other keys
+unifieddocument.entry.name=Unified Document
+unifieddocument.entry.create.hint=Unified document page
+unifieddocument.entries.title=Unified Documents
+
+# Deprecated keys
+unifieddocument.dataSpace.title=Data
+
+# Keys for the sections displayer
+unifieddocument.sections.tree.add=Add
+unifieddocument.sections.tree.remove=Remove
+
+unifieddocument.sections.modal.title=Insert a new section name
+unifieddocument.sections.modal.close=Close
+unifieddocument.sections.modal.newSectionName=Section name
+unifieddocument.sections.modal.cancel=Cancel
+unifieddocument.sections.modal.submit=Submit
+
+unifieddocument.sections.addingNewSection=Adding new section name… 
+unifieddocument.sections.failedToAddSection=Failed to add the new section name
+unifieddocument.sections.removingSection=Removing section name…
+unifieddocument.sections.failedToRemoveSection=Failed to remove the section name
+
+unifieddocument.sections.newSection.saveComment=Add new section name
+unifieddocument.sections.removeSection.saveComment=Remove section name
+unifieddocument.sections.empty=No section name
+
+unifieddocument.sections.tree.remove.confirm=Confirm the removal of this section name?
+unifieddocument.sections.tree.remove.confirm.yes=Yes
+unifieddocument.sections.tree.remove.confirm.no=No
+
+# Unified Documents TOC Panel
+panels.unifieddocument.toc.title=Table of contents
+
+unifieddocument.glossary=Glossary</content>
+  <object>
+    <name>UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations</name>
+    <number>0</number>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>364accd1-d7a0-4615-a346-41af16998704</guid>
+    <class>
+      <name>XWiki.TranslationDocumentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <scope>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>1</number>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+    </class>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+  </object>
+</xwikidoc>

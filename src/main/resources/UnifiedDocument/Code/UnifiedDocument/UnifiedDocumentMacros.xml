@@ -1,0 +1,186 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros" locale="">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentMacros</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>UnifiedDocumentMacros</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity output="false"}}
+#macro(getParentChain $searchEntry $parentsMap $parentChain)
+  #if ($parentsMap.containsKey($searchEntry))
+    #getParentChain($parentsMap[$searchEntry] $parentsMap $parentChain)
+  #end
+  #set($discard = $parentChain.add($searchEntry))
+#end
+
+#macro(getSectionEntry $currentList $sectionName $sectionEntry)
+  #set($sectionEntry = $NULL)
+  #foreach ($section in $currentList)
+    #if ($section['name'] == $sectionName)
+      #setVariable('$sectionEntry', $section)
+    #end
+  #end
+#end
+
+#macro(addEntry $entry $parentsMap $resultList)
+  #set($parentChain = [])
+  #getParentChain($entry['name'], $parentsMap, $parentChain)
+  #set($currentList = $resultList)
+  #foreach ($parent in $parentChain)
+    #if ($parent == $entry['name'])
+      ## We can stop here, and add our child
+      #set($discard = $currentList.add($entry))
+    #else
+      #getSectionEntry($currentList, $parent, $sectionEntry)
+      #set($currentList = $sectionEntry['children'])
+    #end
+  #end
+#end
+
+#macro(getLastSectionUpdateDate $documentReference $locale $sectionContentSpace $return)
+  ## Make sure that we will deal with local document references
+  #set($fullName = $services.model.serialize($documentReference, 'local'))
+  #set($lastDate = $services.query.hql("select max(sectionContentDoc.contentUpdateDate) from BaseObject obj, StringProperty section, XWikiDocument sectionContentDoc, BaseObject sectionContentObj, StringProperty sectionContentLink where obj.className = 'UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass' and section.id.name = 'section' and obj.id = section.id.id and obj.name = :fullName and sectionContentObj.className = 'UnifiedDocument.Code.SectionContent.SectionContentClass' and sectionContentObj.name = sectionContentDoc.fullName and sectionContentObj.name like :contentSpace and sectionContentLink.id.name = 'section' and sectionContentLink.id.id = sectionContentObj.id and sectionContentLink.value = section.value and sectionContentDoc.defaultLanguage = :locale").bindValue('fullName', $fullName).bindValue('locale', $locale).bindValue('contentSpace', "${sectionContentSpace}.%").execute())
+  #if ($lastDate.size() &gt; 0)
+    #set($lastDate = $lastDate[0].time)
+  #else
+    #set($lastDate = 0)
+  #end
+  #set($return = $NULL)
+  #setVariable("$return", $lastDate)
+#end
+
+#macro(getSections $documentReference $return)
+  ## Make sure that we will deal with local document references
+  #set($fullName = $services.model.serialize($documentReference, 'local'))
+  ## Get the infromation of each section
+  #set($sectionsDetails = $services.query.hql("select section.value, sectionDoc.title, parent.value, level.value, numbering.value, obj.number from BaseObject obj, StringProperty section, StringProperty parent, IntegerProperty level, IntegerProperty numbering, XWikiDocument sectionDoc where obj.className = 'UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass' and section.id.name = 'section' and parent.id.name = 'parent' and level.id.name = 'level' and numbering.id.name = 'numbering' and obj.id = section.id.id and obj.id = parent.id.id and obj.id = level.id.id and obj.id = numbering.id.id and obj.name = :fullName and sectionDoc.fullName = section.value order by level.value, numbering.value asc").bindValue('fullName', $fullName).execute())
+  #set($resultList = [])
+  #set($parentsMap = {})
+  #set($currentLevel = 1)
+  #foreach ($sectionDetail in $sectionsDetails)
+    ## Construct the section detail map, that will be easier to work with
+    #set($sectionObj = {
+      'name': $sectionDetail[0],
+      'title': $sectionDetail[1],
+      'level': $sectionDetail[3],
+      'numbering': $sectionDetail[4],
+      'objectNumber': $sectionDetail[5],
+      'children': []
+    })
+    #if ("$!{sectionDetail[2]}" == '')
+      #set($sectionObj['parent'] = $NULL)
+    #else
+      #set($sectionObj['parent'] = $sectionDetail[2])
+    #end
+    ## Position the object in the tree
+    #if (!$sectionObj['parent'])
+      #set($discard = $resultList.add($sectionObj))
+    #else
+      ## Register the parent in the parentMap, so that reconstructing the tree of sections is easier
+      #set($parentsMap[$sectionObj['name']] = $sectionObj['parent'])
+      #addEntry($sectionObj, $parentsMap, $resultList)
+    #end
+  #end
+  #set($return = $NULL)
+  #setVariable("$return", $resultList)
+#end
+
+#macro(sectionContentDisplayer $sectionDescription)
+  ## Compute the heading delimiter of the section
+  #set($macro.heading = $stringtool.repeat('=', $sectionDescription.level))
+  #if ($sectionDescription.containsKey('contentTitle'))
+    (% id="$sectionDescription.contentName" %)
+    $macro.heading $sectionDescription.numbering. $sectionDescription.contentTitle $macro.heading
+    ## Display the content
+    {{display reference="$sectionDescription.contentName"/}}
+  #else
+    (% id="$sectionDescription.name" %)
+    $macro.heading $sectionDescription.numbering. $sectionDescription.title $macro.heading
+
+    {{warning}}
+    $services.localization.render('unifieddocument.sheet.noSectionPublished')
+    {{/warning}}
+  #end
+#end
+
+#macro(sectionContentTocDisplayer $sectionDescription)
+  ## Compute the heading delimiter of the section
+  #set($bullets = $stringtool.repeat('*', $sectionDescription.level))
+  #if ($sectionDescription.containsKey('contentTitle'))
+    $bullets [[$sectionDescription.numbering. $sectionDescription.contentTitle&gt;&gt;||anchor="$sectionDescription.contentName"]]
+  #else
+    $bullets [[$sectionDescription.numbering. $sectionDescription.title&gt;&gt;||anchor="$sectionDescription.name"]]
+  #end
+#end
+
+## Returns the given document's locale, with a fallback to the default locale in case the locale is empty.
+#macro(getDocumentLocale $xdoc $return)
+  #set ($macro.locale = "$xdoc.locale")
+  #if ("$!macro.locale" == '')
+    #set ($macro.locale = "$xdoc.defaultLocale")
+  #end
+  #set ($return = $NULL)
+  #setVariable("$return", $macro.locale)
+#end
+
+#macro(displaySectionEntries $section $locale $level $numbering $displayer $sectionContentSpace)
+  ## Get the section content that corresponds to this section
+  #set($sectionContents = $services.query.hql("select doc.fullName, doc.title from XWikiDocument doc, BaseObject obj, StringProperty section where obj.className = 'UnifiedDocument.Code.SectionContent.SectionContentClass' and doc.fullName = obj.name and obj.id = section.id.id and section.id.name = 'section' and section.value = :section and doc.defaultLanguage = :locale and obj.name like :contentSpace").bindValue('section', $section['name']).bindValue('locale', $locale).bindValue('contentSpace', "${sectionContentSpace}.%").execute())
+  #set($sectionDescription = {
+    'numbering': $numbering,
+    'level': $level,
+    'name': $section['name']
+  })
+  ## Case where no section content is published yet
+  #if ($sectionContents.size() == 0)
+    ## We need at least the name of the section, so let's load this quickly
+    #set($sectionName = $services.query.hql("select doc.title from XWikiDocument doc where doc.fullName = :section").bindValue('section', $section['name']).setLimit(1).execute())
+    #set($sectionDescription.title = $sectionName[0])
+    #evaluate("#${displayer}(\$sectionDescription)")
+  #else
+    #foreach ($sectionContent in $sectionContents)
+      #set($sectionDescription.contentName = $sectionContent[0])
+      #set($sectionDescription.contentTitle = $sectionContent[1])
+      #evaluate("#${displayer}(\$sectionDescription)")
+    #end
+  #end
+  ## Display the children of the section
+  #set($macro.childLevel = $level + 1)
+  #foreach ($child in $section['children'])
+    #displaySectionEntries($child $locale $macro.childLevel "$!{numbering}.${foreach.count}" $displayer $sectionContentSpace)
+  #end
+#end
+{{/velocity}}</content>
+</xwikidoc>

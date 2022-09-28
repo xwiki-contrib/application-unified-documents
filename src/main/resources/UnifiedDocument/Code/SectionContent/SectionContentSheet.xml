@@ -1,0 +1,290 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.SectionContent.SectionContentSheet" locale="">
+  <web>UnifiedDocument.Code.SectionContent</web>
+  <name>SectionContentSheet</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity}}
+#set ($object = $doc.getObject('UnifiedDocument.Code.SectionContent.SectionContentClass'))
+#if (!$object)
+  #set ($messageKey = 'sectioncontent.sheet.description')
+  #set ($messageType = 'info')
+  #if ($doc.documentReference.name != 'SectionContentSheet')
+    #set ($messageKey = 'sectioncontent.sheet.noObject')
+    #set ($messageType = 'warning')
+  #end
+  {{$messageType}}
+  $services.localization.render($messageKey)
+  {{/$messageType}}
+  #stop
+#end
+#set ($discard = $xwiki.jsfx.use('uicomponents/edit/editableProperty.js', {
+  'forceSkinAction': true,
+  'language': $xcontext.locale
+}))
+#set ($discard = $doc.use($object))
+#set ($discard = $xwiki.jsx.use('UnifiedDocument.Code.SectionContent.SectionContentSheet'))
+#set ($editing = $xcontext.action == 'edit')
+## Check if the section content has its workflow that is not initialized. If so, it means that we need to define the target.
+#set($workflowObject = $doc.getObject('PublicationWorkflow.PublicationWorkflowClass'))
+#if ($editing &amp;&amp; "$!{workflowObject.getValue('target')}" == '')
+  ## Display a pre-creation page, allowing to choose the section to which the content applies to, and also to choose the workflow
+  {{html wiki="true" clean="false"}}
+  &lt;div class="xform"&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;
+        &lt;label for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_section"&gt;
+          $escapetool.xml($doc.displayPrettyName('section', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('section')&lt;/dd&gt;
+      &lt;div class="sectionAvailability box" style="display: none;"&gt;
+      &lt;/div&gt;
+      ## Silently set the target of the workflow document
+      ## Get the current workflow configuration
+      #set($wfConfigDoc = $xwiki.getDocument($workflowObject.getValue('workflow')))
+      #set($discard = $wfConfigDoc.use('PublicationWorkflow.PublicationWorkflowConfigClass'))
+      #set($defaultDraftSpace = $wfConfigDoc.getValue('defaultDraftSpace'))
+      #if ($stringtool.isBlank($defaultDraftSpace))
+        #set($defaultDraftSpace = 'Draft')
+      #end
+      #set($defaultDraftSpace = "${defaultDraftSpace}.")
+      #set($defaultTargetSpace = $wfConfigDoc.getValue('defaultTargetSpace'))
+      #if ($stringtool.isBlank($defaultTargetSpace))
+        #set($defaultTargetSpace = 'Published')
+      #end
+      #set($wfTarget = "${defaultTargetSpace}.${stringtool.removeStart($doc.fullName, $defaultDraftSpace)}")
+      &lt;input type="hidden" name="PublicationWorkflow.PublicationWorkflowClass_0_target" value="${escapetool.xml($wfTarget)}"/&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+  {{/html}}
+#else
+  #set($isTarget = $workflowObject.getValue('istarget') == 1)
+  #if ($isTarget)
+    ## Just display the document content, as it will be included in the unified document
+    $doc.display('content')
+  #else
+    {{html wiki="true" clean="false"}}
+    &lt;div class="xform"&gt;
+      &lt;dl&gt;
+        &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+            class="editableProperty"
+            data-property="$escapetool.xml($services.model.serialize($object.getProperty('title').reference))"
+            data-property-type="object"#end&gt;
+          &lt;label#if ($editing) for="XWiki.SectionContent.Code.SectionContentClass_0_title"#end&gt;
+            $escapetool.xml($doc.displayPrettyName('title', false, false))
+          &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;$doc.display('title')&lt;/dd&gt;
+        &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+            class="editableProperty"
+            data-property="$escapetool.xml($services.model.serialize($object.getProperty('content').reference))"
+            data-property-type="object"#end&gt;
+          &lt;label#if ($editing) for="XWiki.SectionContent.Code.SectionContentClass_0_content"#end&gt;
+            $escapetool.xml($doc.displayPrettyName('content', false, false))
+          &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;$doc.display('content')&lt;/dd&gt;
+        #set($discard = $doc.use('PublicationWorkflow.PublicationWorkflowClass'))
+        #set($object = $doc.getObject('PublicationWorkflow.PublicationWorkflowClass'))
+        &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+            class="editableProperty"
+            data-property="$escapetool.xml($services.model.serialize($object.getProperty('publicationComment').reference))"
+            data-property-type="object"#end&gt;
+          &lt;label#if ($xcontext.action == 'edit') for="PublicationWorkflow.PublicationWorkflowClass_0_publicationComment"#end&gt;
+            $escapetool.xml($doc.displayPrettyName('publicationComment', false, false))
+          &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;$doc.display('publicationComment')&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;
+    {{/html}}
+  #end
+#end
+{{/velocity}}</content>
+  <object>
+    <name>UnifiedDocument.Code.SectionContent.SectionContentSheet</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>08ac0625-5923-415b-943f-70e2c542fc15</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <defaultValue>long</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>require(['jquery'], function($) {
+  let sectionAvailabilityService = "$xwiki.getURL('XWiki.SectionContent.Code.SectionContentAvailabilityService', 'get', 'outputsyntax=plain')";
+  let sectionAvailableMessage = "$services.localization.render('sectioncontent.sectionAvailable')";
+  let sectionUnavailableMessage = "$services.localization.render('sectioncontent.sectionUnavailable')";
+
+  $(function() {
+    let save = $('input[name=action_save]');
+    let saveAndContinue = $('input[name=action_saveandcontinue]');
+    let preview = $('input[name=action_preview]');
+    let language = $('input[name=language]').val();
+    let sectionAvailability = $('.sectionAvailability');
+    let sectionSelector = $('select[name="XWiki.SectionContent.Code.SectionContentClass_0_section"]');
+
+
+    let disableSaveButtons = function() {
+      save.prop('disabled', true);
+      saveAndContinue.prop('disabled', true);
+      preview.prop('disabled', true);
+    }
+
+    let enableSaveButtons = function() {
+      save.prop('disabled', false);
+      saveAndContinue.prop('disabled', false);
+      preview.prop('disabled', false);
+    }
+
+    sectionSelector.on('change', function() {
+      // Disable the save buttons
+      disableSaveButtons();
+      $.ajax(sectionAvailabilityService, {
+        data: {
+          'language': language,
+          'section': $(this).val()
+        }
+      }).done(function(data) {
+        sectionAvailability.show();
+        if (data.available) {
+          sectionAvailability.text(sectionAvailableMessage);
+          sectionAvailability.removeClass('errormessage');
+          sectionAvailability.addClass('successmessage');
+          enableSaveButtons();
+        } else {
+          sectionAvailability.text(sectionUnavailableMessage);
+          sectionAvailability.removeClass('successmessage');
+          sectionAvailability.addClass('errormessage');
+        }
+      })
+    });
+
+    // Start by disabling the save buttons, as we need a section to continue
+    if (sectionSelector.length === 1 &amp;&amp; (sectionSelector.val() === null || sectionSelector.val().length === 0)) {
+      disableSaveButtons();
+    }
+  });
+});</code>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+</xwikidoc>

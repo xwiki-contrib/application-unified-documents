@@ -1,0 +1,122 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionService" locale="">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentSectionService</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>UnifiedDocumentSectionService</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentMacros"/}}
+
+{{velocity}}
+#macro(formatSections $sections)
+  #foreach($section in $sections)
+    #set($section['id'] = $section['name'])
+    #set($section['text'] = $section['title'])
+    ## jsTree has its own management of what is a "parent" for the node
+    #set($discard = $section.remove('parent'))
+    ## Store metadata in the li attributes
+    #set($section['li_attr'] = {
+      'objectNumber': $section['objectNumber']
+    })
+    #formatSections($section['children'])
+  #end
+#end
+
+#if ("$!{request.document}" != '' &amp;&amp; $services.security.authorization.hasAccess('view', $documentReference))
+  #set($documentReference = $services.model.resolveDocument($request.document))
+  #if ($request.action == 'get')
+    #getSections($documentReference $return)
+    #formatSections($return)
+    #jsonResponse($return)
+  #elseif ($request.action == 'suggest')
+    #set($alreadyUsedSections = $services.query.hql("select section.value from BaseObject obj, StringProperty section where obj.className = 'UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass' and obj.id = section.id.id and section.id.name = 'section' and obj.name = :document group by section.value").bindValue('document', $request.document).execute())
+    #set($additionalUsedSectionsQuery = '')
+    #if ($alreadyUsedSections.size() &gt; 0)
+      #set($additionalUsedSectionsQuery = "and doc.fullName not in :alreadyUsedSections")
+    #end
+    #set($queryString = "select doc.fullName, doc.title from XWikiDocument doc, BaseObject obj where doc.fullName = obj.name and obj.className = 'UnifiedDocument.Code.Section.SectionClass' and ((upper(doc.title) like :text) or (upper(doc.fullName) like :text)) ${additionalUsedSectionsQuery} group by doc.fullName, doc.title")
+    #set($query = $services.query.hql($queryString).bindValue('text', "%${stringtool.upperCase($request.text)}%").addFilter('hidden'))
+    #if ($alreadyUsedSections.size() &gt; 0)
+      #set($discard = $query.bindValue('alreadyUsedSections', $alreadyUsedSections))
+    #end
+    #set($results = $query.execute())
+    #set($json = [$results])
+    #foreach ($result in $results)
+      #set($discard = $json.add({
+        'label': $result[1],
+        'value': $result[0]
+      }))
+    #end
+    #jsonResponse($json)
+  #elseif ($services.security.authorization.hasAccess('edit', $documentReference))
+    #set($document = $xwiki.getDocument($documentReference))
+    #if ($request.action == 'add' &amp;&amp; $xwiki.exists($request.section))
+      ## Add the new object
+      #set($object = $document.newObject('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass'))
+      ## We don't set the parent, as it would cause issues when the user adds the new section and then directly leaves the page from edit mode.
+      #set($discard = $object.set('section', $request.section))
+      ## Search for the highest numbered node with this parent, and add 1
+      #set($parent = "$!{request.parent}")
+      #set($previousNodeInfo = $services.query.hql("select numbering.value, level.value from BaseObject obj, IntegerProperty numbering, IntegerProperty level, StringProperty parent where obj.name = :document and obj.className = 'UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass' and obj.id = numbering.id.id and numbering.id.name = 'numbering' and obj.id = level.id.id and level.id.name = 'level' and obj.id = parent.id.id and parent.id.name = 'parent' and parent.value = :parent order by numbering desc").bindValue('document', $document.fullName).bindValue('parent', $parent).setLimit(1).execute())
+      #if ($previousNodeInfo.size() == 1)
+        #set($numbering = $previousNodeInfo[0][0])
+        #set($level = $previousNodeInfo[0][1])
+      #else
+        #set($level = 1)
+        #set($numbering = 0)
+      #end
+      ## Get the title of the new section
+      #set($title = $xwiki.getDocument($request.section).title)
+      #set($discard = $object.set('numbering', $numbering))
+      #set($discard = $object.set('level', $level))
+      #set($discard = $document.save($services.localization.render('unifieddocument.sections.newSection.saveComment')))
+      #set($json = {
+        'id': $request.section,
+        'text': $title,
+        'li_attr': {
+          'objectNumber': $object.number
+        },
+        'children': []
+      })
+      #jsonResponse($json)
+    #elseif ($request.action == 'remove')
+      #set($integer = 0)
+      #set($discard = $document.removeObject($document.getObject('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionClass', $integer.parseInt($request.objectNumber))))
+      #set($discard = $document.save($services.localization.render('unifieddocument.sections.removeSection.saveComment')))
+      #jsonResponse({'success': true})
+    #end
+  #end
+#end
+{{/velocity}}</content>
+</xwikidoc>

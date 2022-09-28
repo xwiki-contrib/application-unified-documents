@@ -1,0 +1,240 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.SectionContent.SectionContentTemplate" locale="">
+  <web>UnifiedDocument.Code.SectionContent</web>
+  <name>SectionContentTemplate</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>SectionContentTemplate</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content/>
+  <object>
+    <name>UnifiedDocument.Code.SectionContent.SectionContentTemplate</name>
+    <number>0</number>
+    <className>PublicationWorkflow.PublicationWorkflowClass</className>
+    <guid>af5a0185-5d2e-4455-95e4-0727df85aa15</guid>
+    <class>
+      <name>PublicationWorkflow.PublicationWorkflowClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <istarget>
+        <customDisplay/>
+        <defaultValue>0</defaultValue>
+        <disabled>0</disabled>
+        <displayFormType>checkbox</displayFormType>
+        <displayType/>
+        <name>istarget</name>
+        <number>4</number>
+        <prettyName>istarget</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </istarget>
+      <status>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>status</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>status</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>draft|moderating|validating|valid|published|archived</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </status>
+      <statusAuthor>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <multiSelect>0</multiSelect>
+        <name>statusAuthor</name>
+        <number>5</number>
+        <picker>1</picker>
+        <prettyName>statusAuthor</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators/>
+        <size>20</size>
+        <sort>none</sort>
+        <unmodifiable>0</unmodifiable>
+        <usesList>0</usesList>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+      </statusAuthor>
+      <target>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>target</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>target</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </target>
+      <workflow>
+        <cache>0</cache>
+        <classname/>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <idField/>
+        <multiSelect>0</multiSelect>
+        <name>workflow</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>workflow</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators/>
+        <size>1</size>
+        <sort>none</sort>
+        <sql>select obj.name, doc.title from XWikiDocument doc, BaseObject obj where doc.fullName = obj.name and obj.className = 'PublicationWorkflow.PublicationWorkflowConfigClass' and doc.name != 'PublicationWorkflowConfigTemplate' order by doc.title</sql>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <valueField/>
+        <classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
+      </workflow>
+    </class>
+    <property>
+      <istarget>0</istarget>
+    </property>
+    <property>
+      <publicationComment/>
+    </property>
+    <property>
+      <status>draft</status>
+    </property>
+    <property>
+      <statusAuthor/>
+    </property>
+    <property>
+      <target/>
+    </property>
+    <property>
+      <workflow>PublicationWorkflow.DefaultWorkflowConfiguration</workflow>
+    </property>
+  </object>
+  <object>
+    <name>UnifiedDocument.Code.SectionContent.SectionContentTemplate</name>
+    <number>0</number>
+    <className>UnifiedDocument.Code.SectionContent.SectionContentClass</className>
+    <guid>ed4e25d2-a60e-4284-8218-12277c392886</guid>
+    <class>
+      <name>UnifiedDocument.Code.SectionContent.SectionContentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <content>
+        <customDisplay>{{include reference="AppWithinMinutes.Content"/}}</customDisplay>
+        <disabled>0</disabled>
+        <hint/>
+        <name>content</name>
+        <number>2</number>
+        <prettyName>Content</prettyName>
+        <script/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.ComputedFieldClass</classType>
+      </content>
+      <section>
+        <cache>0</cache>
+        <classname>XWiki.Section.Code.SectionClass</classname>
+        <customDisplay/>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <freeText/>
+        <hint/>
+        <idField>doc.fullName</idField>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>section</name>
+        <number>3</number>
+        <picker>1</picker>
+        <prettyName>Section</prettyName>
+        <relationalStorage>1</relationalStorage>
+        <separator> </separator>
+        <separators/>
+        <size>1</size>
+        <sort>none</sort>
+        <sql/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <valueField>doc.title</valueField>
+        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+      </section>
+      <title>
+        <customDisplay>{{include reference="AppWithinMinutes.Title"/}}</customDisplay>
+        <disabled>0</disabled>
+        <hint/>
+        <name>title</name>
+        <number>1</number>
+        <prettyName>Title</prettyName>
+        <script/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.ComputedFieldClass</classType>
+      </title>
+    </class>
+    <property>
+      <section/>
+    </property>
+  </object>
+</xwikidoc>
