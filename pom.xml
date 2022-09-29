@@ -30,7 +30,8 @@
   <groupId>org.xwiki.contrib.unifieddocument</groupId>
   <artifactId>application-unified-documents</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>xar</packaging>
+  <name>Unified Documents Application - Parent POM</name>
+  <packaging>pom</packaging>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-unified-documents.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-unified-documents.git</developerConnection>
@@ -43,43 +44,30 @@
       <name>Clément Aubin</name>
     </developer>
   </developers>
+  <organization>
+    <name>XWiki SAS</name>
+    <url>http://xwiki.com</url>
+  </organization>
   <properties>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>UDA</xwiki.issueManagement.jira.id>
+    <publicationWorkflow.version>2.1</publicationWorkflow.version>
   </properties>
-  <build>
-    <plugins>
-      <plugin>
+  <modules>
+    <module>ui</module>
+  </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-security-api</artifactId>
+        <version>${platform.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.xwiki.commons</groupId>
-        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
-        <configuration>
-          <entries>
-            <entry>
-              <document>UnifiedDocument.WebPreferences</document>
-              <type>configuration</type>
-            </entry>
-          </entries>
-          <visibleTechnicalPages>
-            <visibleTechnicalPage>.*/UnifiedDocument/WebHome\.xml</visibleTechnicalPage>
-            <visibleTechnicalPage>.*/UnifiedDocument/Category/WebHome\.xml</visibleTechnicalPage>
-            <visibleTechnicalPage>.*/UnifiedDocument/Section/WebHome\.xml</visibleTechnicalPage>
-          </visibleTechnicalPages>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <dependencies>
-    <dependency>
-      <groupId>org.xwiki.contrib.workflow-publication</groupId>
-      <artifactId>xwiki-workflow-publication-application</artifactId>
-      <version>2.1</version>
-      <type>xar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-appwithinminutes-ui</artifactId>
-      <version>${platform.version}</version>
-      <type>xar</type>
-    </dependency>
-  </dependencies>
+        <artifactId>xwiki-commons-component-api</artifactId>
+        <version>${commons.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
