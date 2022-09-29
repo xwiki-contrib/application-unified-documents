@@ -29,14 +29,14 @@
   </parent>
   <groupId>org.xwiki.contrib.unifieddocument</groupId>
   <artifactId>application-unified-documents</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Unified Documents Application - Parent POM</name>
   <packaging>pom</packaging>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-unified-documents.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-unified-documents.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-unified-documents</url>
-    <tag>HEAD</tag>
+    <tag>application-unified-documents-1.0</tag>
   </scm>
   <developers>
     <developer>
