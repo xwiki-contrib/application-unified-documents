@@ -31,6 +31,9 @@
   <name>Unified Documents Application - UI</name>
   <version>1.0-SNAPSHOT</version>
   <packaging>xar</packaging>
+  <properties>
+    <xwiki.extension.name>Unified Documents Application</xwiki.extension.name>
+  </properties>
   <build>
     <plugins>
       <plugin>
