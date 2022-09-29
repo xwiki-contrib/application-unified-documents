@@ -25,11 +25,11 @@
   <parent>
     <groupId>org.xwiki.contrib.unifieddocument</groupId>
     <artifactId>application-unified-documents</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
   </parent>
   <artifactId>application-unified-documents-ui</artifactId>
   <name>Unified Documents Application - UI</name>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>xar</packaging>
   <properties>
     <xwiki.extension.name>Unified Documents Application</xwiki.extension.name>
