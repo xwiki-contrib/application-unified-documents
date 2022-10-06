@@ -37,4 +37,48 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
   <content/>
+  <object>
+    <name>UnifiedDocument.Section.WebHome</name>
+    <number>0</number>
+    <className>XWiki.DocumentSheetBinding</className>
+    <guid>bf27b16f-64db-4ec7-8af3-59eb90c106d0</guid>
+    <class>
+      <name>XWiki.DocumentSheetBinding</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <sheet>
+        <cache>0</cache>
+        <classname/>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <hint/>
+        <idField/>
+        <multiSelect>0</multiSelect>
+        <name>sheet</name>
+        <number>1</number>
+        <picker>1</picker>
+        <prettyName>Sheet</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators/>
+        <size>30</size>
+        <sort>none</sort>
+        <sql/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <valueField/>
+        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+      </sheet>
+    </class>
+    <property>
+      <sheet>UnifiedDocument.Code.Section.SectionHomeSheet</sheet>
+    </property>
+  </object>
 </xwikidoc>
