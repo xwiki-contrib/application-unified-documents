@@ -1,6 +1,6 @@
-# Optical Character Recognition Application
+# Unified Documents Application
 
-Creates Wiki documents from images or scanned PDFs using optical character recognition
+Create unified documents made of an assembly of multiple sections
 
 * Project Leads:
   * [Clément Aubin](http://www.xwiki.org/xwiki/bin/view/XWiki/caubin)
