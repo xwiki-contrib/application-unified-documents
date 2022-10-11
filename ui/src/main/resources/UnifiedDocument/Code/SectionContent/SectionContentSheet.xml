@@ -103,7 +103,7 @@
             class="editableProperty"
             data-property="$escapetool.xml($services.model.serialize($object.getProperty('title').reference))"
             data-property-type="object"#end&gt;
-          &lt;label#if ($editing) for="XWiki.SectionContent.Code.SectionContentClass_0_title"#end&gt;
+          &lt;label#if ($editing) for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_title"#end&gt;
             $escapetool.xml($doc.displayPrettyName('title', false, false))
           &lt;/label&gt;
         &lt;/dt&gt;
@@ -112,7 +112,7 @@
             class="editableProperty"
             data-property="$escapetool.xml($services.model.serialize($object.getProperty('content').reference))"
             data-property-type="object"#end&gt;
-          &lt;label#if ($editing) for="XWiki.SectionContent.Code.SectionContentClass_0_content"#end&gt;
+          &lt;label#if ($editing) for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_content"#end&gt;
             $escapetool.xml($doc.displayPrettyName('content', false, false))
           &lt;/label&gt;
         &lt;/dt&gt;
@@ -222,7 +222,7 @@
     </property>
     <property>
       <code>require(['jquery'], function($) {
-  let sectionAvailabilityService = "$xwiki.getURL('XWiki.SectionContent.Code.SectionContentAvailabilityService', 'get', 'outputsyntax=plain')";
+  let sectionAvailabilityService = "$xwiki.getURL('UnifiedDocument.Code.SectionContent.SectionContentAvailabilityService', 'get', 'outputsyntax=plain')";
   let sectionAvailableMessage = "$services.localization.render('sectioncontent.sectionAvailable')";
   let sectionUnavailableMessage = "$services.localization.render('sectioncontent.sectionUnavailable')";
 
@@ -232,7 +232,7 @@
     let preview = $('input[name=action_preview]');
     let language = $('input[name=language]').val();
     let sectionAvailability = $('.sectionAvailability');
-    let sectionSelector = $('select[name="XWiki.SectionContent.Code.SectionContentClass_0_section"]');
+    let sectionSelector = $('select[name="UnifiedDocument.Code.SectionContent.SectionContentClass_0_section"]');
 
 
     let disableSaveButtons = function() {

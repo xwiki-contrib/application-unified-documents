@@ -193,7 +193,7 @@
       </content>
       <section>
         <cache>0</cache>
-        <classname>XWiki.Section.Code.SectionClass</classname>
+        <classname>UnifiedDocument.Code.Section.SectionClass</classname>
         <customDisplay/>
         <defaultValue/>
         <disabled>0</disabled>
