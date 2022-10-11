@@ -194,7 +194,7 @@
     </property>
     <property>
       <parameters>label=Unified Documents
-target=XWiki.UnifiedDocument.WebHome
+target=UnifiedDocument.WebHome
 icon=icon:cubes</parameters>
     </property>
     <property>
