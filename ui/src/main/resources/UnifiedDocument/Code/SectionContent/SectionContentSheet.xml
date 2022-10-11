@@ -101,7 +101,7 @@
       &lt;dl&gt;
         &lt;dt #if (!$editing &amp;&amp; $hasEdit)
             class="editableProperty"
-            data-property="$escapetool.xml($services.model.serialize($object.getProperty('title').reference))"
+            data-property="$escapetool.xml($services.model.serialize($object.getPropertyReference('title')))"
             data-property-type="object"#end&gt;
           &lt;label#if ($editing) for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_title"#end&gt;
             $escapetool.xml($doc.displayPrettyName('title', false, false))
@@ -110,7 +110,7 @@
         &lt;dd&gt;$doc.display('title')&lt;/dd&gt;
         &lt;dt #if (!$editing &amp;&amp; $hasEdit)
             class="editableProperty"
-            data-property="$escapetool.xml($services.model.serialize($object.getProperty('content').reference))"
+            data-property="$escapetool.xml($services.model.serialize($object.getPropertyReference('content')))"
             data-property-type="object"#end&gt;
           &lt;label#if ($editing) for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_content"#end&gt;
             $escapetool.xml($doc.displayPrettyName('content', false, false))
@@ -121,7 +121,7 @@
         #set($object = $doc.getObject('PublicationWorkflow.PublicationWorkflowClass'))
         &lt;dt #if (!$editing &amp;&amp; $hasEdit)
             class="editableProperty"
-            data-property="$escapetool.xml($services.model.serialize($object.getProperty('publicationComment').reference))"
+            data-property="$escapetool.xml($services.model.serialize($object.getPropertyReference('publicationComment')))"
             data-property-type="object"#end&gt;
           &lt;label#if ($xcontext.action == 'edit') for="PublicationWorkflow.PublicationWorkflowClass_0_publicationComment"#end&gt;
             $escapetool.xml($doc.displayPrettyName('publicationComment', false, false))
