@@ -180,6 +180,8 @@
 
 {{velocity}}
 #if (!$request.viewer &amp;&amp; $doc.fullName != 'UnifiedDocument.WebHome')
+  #set ($discard = $xwiki.linkx.use($services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'tree.min.css', {'evaluate': true}), {'type': 'text/css', 'rel': 'stylesheet'}))
+  #set ($discard = $xwiki.jsfx.use('uicomponents/widgets/tree.min.js', true))
   #set($discard = $xwiki.jsx.use('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTocPanel'))
   #panelheader($services.localization.render('panels.unifieddocument.toc.title'))
   #getDocumentLocale($tdoc, $locale)
