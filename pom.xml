@@ -43,6 +43,10 @@
       <id>caubin</id>
       <name>Clément Aubin</name>
     </developer>
+    <developer>
+      <id>slauriere</id>
+      <name>Stéphane Laurière</name>
+    </developer>
   </developers>
   <organization>
     <name>XWiki SAS</name>
