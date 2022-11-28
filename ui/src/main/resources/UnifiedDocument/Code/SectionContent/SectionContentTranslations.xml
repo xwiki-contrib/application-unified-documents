@@ -76,9 +76,9 @@ sectioncontent.livetable.content=Content
 sectioncontent.livetable.section=Section name
 
 # Other keys
-sectioncontent.entry.name=Section
-sectioncontent.entry.create.hint=Section page
-sectioncontent.entries.title=Sections
+sectioncontent.entry.name=Section content
+sectioncontent.entry.create.hint=Section content page
+sectioncontent.entries.title=Section contents
 
 # Deprecated keys
 sectioncontent.dataSpace.title=Data
