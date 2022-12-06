@@ -37,7 +37,6 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content>{{velocity}}
-#if ($hasAdmin)
 #set ($columnsProperties = {
   'doc.title': {"link":"view"},
   'doc.location': {"html":true},
@@ -56,6 +55,5 @@
 })
 #set ($columns = ['doc.title', 'doc.location', 'doc.date', 'doc.author', '_actions'])
 #livetable('section' $columns $columnsProperties $options)
-#end
 {{/velocity}}</content>
 </xwikidoc>
