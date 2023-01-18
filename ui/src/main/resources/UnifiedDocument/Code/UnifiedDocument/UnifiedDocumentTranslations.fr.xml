@@ -1,1 +1,105 @@
+<?xml version="1.1" encoding="UTF-8"?>
 
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations" locale="fr">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentTranslations</name>
+  <language>fr</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titre
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Catégorie
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Noms de section
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Espace de contenu
+
+# Sheet keys
+unifieddocument.sheet.description=Cette page contrôle la manière dont les documents unifiés sont affichés en mode vue et en mode édition.
+unifieddocument.sheet.noObject=La page actuelle ne dispose pas de l'objet "UnifiedDocument" requis.
+unifieddocument.sheet.noFields=L'application de documents unifiés n'a aucun champ à afficher.
+unifieddocument.sheet.noSectionPublished=Cette section n'est pas publiée.
+
+# Live table generic keys
+unifieddocument.livetable.doc.title=Titre de la page
+unifieddocument.livetable.doc.name=Nom de la page
+unifieddocument.livetable.doc.space=Espace
+unifieddocument.livetable.doc.fullname=Nom complet de la page
+unifieddocument.livetable.doc.location=Emplacement
+unifieddocument.livetable.doc.author=Dernier Auteur
+unifieddocument.livetable.doc.creator=Créateur
+unifieddocument.livetable.doc.date=Date
+unifieddocument.livetable.doc.creationDate=Date de création
+unifieddocument.livetable._avatar=Avatar
+unifieddocument.livetable._images=Images
+unifieddocument.livetable._attachments=Pièces jointes
+unifieddocument.livetable._actions=Actions
+unifieddocument.livetable._actions.edit=Éditer
+unifieddocument.livetable._actions.delete=Supprimer
+unifieddocument.livetable.emptyvalue=-
+
+# Live table specific keys
+unifieddocument.livetable.title=Titre
+unifieddocument.livetable.category=Catégorie
+unifieddocument.livetable.sections=Noms de section
+
+# Other keys
+unifieddocument.entry.name=Document Unifié
+unifieddocument.entry.create.hint=Page de document unifié
+unifieddocument.entries.title=Documents Unifiés
+
+# Deprecated keys
+unifieddocument.dataSpace.title=Données
+
+# Keys for the sections displayer
+unifieddocument.sections.tree.add=Ajouter
+unifieddocument.sections.tree.remove=Retirer
+unifieddocument.sections.modal.title=Insérez un nouveau nom de section
+unifieddocument.sections.modal.close=Fermer
+unifieddocument.sections.modal.newSectionName=Nom de section
+unifieddocument.sections.modal.cancel=Annuler
+unifieddocument.sections.modal.submit=Envoyer
+### Missing: unifieddocument.sections.addingNewSection=Adding new section name… 
+### Missing: unifieddocument.sections.failedToAddSection=Failed to add the new section name
+### Missing: unifieddocument.sections.removingSection=Removing section name…
+### Missing: unifieddocument.sections.failedToRemoveSection=Failed to remove the section name
+### Missing: unifieddocument.sections.newSection.saveComment=Add new section name
+### Missing: unifieddocument.sections.removeSection.saveComment=Remove section name
+### Missing: unifieddocument.sections.empty=No section name
+### Missing: unifieddocument.sections.tree.remove.confirm=Confirm the removal of this section name?
+### Missing: unifieddocument.sections.tree.remove.confirm.yes=Yes
+### Missing: unifieddocument.sections.tree.remove.confirm.no=No
+
+# Unified Documents TOC Panel
+panels.unifieddocument.toc.title=Table des matières
+unifieddocument.glossary=Glossaire
+</content>
+  </xwikidoc>
