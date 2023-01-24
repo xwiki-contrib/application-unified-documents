@@ -100,6 +100,6 @@
 
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Índice
-### Missing: unifieddocument.glossary=Glossary
+unifieddocument.glossary=Glossário
 </content>
   </xwikidoc>
