@@ -100,6 +100,6 @@
 
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Inhaltsübersicht
-### Missing: unifieddocument.glossary=Glossary
+unifieddocument.glossary=Glossar
 </content>
   </xwikidoc>
