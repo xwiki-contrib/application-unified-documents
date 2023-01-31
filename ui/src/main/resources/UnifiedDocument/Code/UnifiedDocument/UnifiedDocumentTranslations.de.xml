@@ -37,69 +37,69 @@
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
   <content># Class fields
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Title
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Category
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Section names
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Content space
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titel
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Kategorie
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Namen der Sektionen
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Inhaltlicher Raum
 
 # Sheet keys
-### Missing: unifieddocument.sheet.description=This page controls how Unified Documents pages are displayed in both view and edit modes.
-### Missing: unifieddocument.sheet.noObject=The current page doesn't have the expected Unified Documents object.
-### Missing: unifieddocument.sheet.noFields=The Unified Documents application doesn't have any fields to display.
-### Missing: unifieddocument.sheet.noSectionPublished=This section is not published.
+unifieddocument.sheet.description=Diese Seite steuert, wie die Seiten von Unified Documents im Anzeige- und Bearbeitungsmodus angezeigt werden.
+unifieddocument.sheet.noObject=Die aktuelle Seite enthält nicht das erwartete Unified Documents-Objekt.
+unifieddocument.sheet.noFields=In der Anwendung Unified Documents gibt es keine Felder, die angezeigt werden können.
+unifieddocument.sheet.noSectionPublished=Dieser Abschnitt wird nicht veröffentlicht.
 
 # Live table generic keys
-### Missing: unifieddocument.livetable.doc.title=Page Title
-### Missing: unifieddocument.livetable.doc.name=Page Name
-### Missing: unifieddocument.livetable.doc.space=Space
-### Missing: unifieddocument.livetable.doc.fullname=Page full name
-### Missing: unifieddocument.livetable.doc.location=Location
-### Missing: unifieddocument.livetable.doc.author=Last Author
-### Missing: unifieddocument.livetable.doc.creator=Creator
-### Missing: unifieddocument.livetable.doc.date=Date
-### Missing: unifieddocument.livetable.doc.creationDate=Creation Date
-### Missing: unifieddocument.livetable._avatar=Avatar
-### Missing: unifieddocument.livetable._images=Images
-### Missing: unifieddocument.livetable._attachments=Attachments
-### Missing: unifieddocument.livetable._actions=Actions
-### Missing: unifieddocument.livetable._actions.edit=Edit
-### Missing: unifieddocument.livetable._actions.delete=Delete
-### Missing: unifieddocument.livetable.emptyvalue=-
+unifieddocument.livetable.doc.title=Titel der Seite
+unifieddocument.livetable.doc.name=Seitenname
+unifieddocument.livetable.doc.space=Bereich
+unifieddocument.livetable.doc.fullname=Vollständiger Name der Seite
+unifieddocument.livetable.doc.location=Speicherort
+unifieddocument.livetable.doc.author=Letzter Autor
+unifieddocument.livetable.doc.creator=Ersteller
+unifieddocument.livetable.doc.date=Datum
+unifieddocument.livetable.doc.creationDate=Erstelldatum
+unifieddocument.livetable._avatar=Avatar
+unifieddocument.livetable._images=Bilder
+unifieddocument.livetable._attachments=Anhänge
+unifieddocument.livetable._actions=Aktionen
+unifieddocument.livetable._actions.edit=Bearbeiten
+unifieddocument.livetable._actions.delete=Löschen
+unifieddocument.livetable.emptyvalue=-
 
 # Live table specific keys
-### Missing: unifieddocument.livetable.title=Title
-### Missing: unifieddocument.livetable.category=Category
-### Missing: unifieddocument.livetable.sections=Section names
+unifieddocument.livetable.title=Titel
+unifieddocument.livetable.category=Kategorie
+unifieddocument.livetable.sections=Namen der Sektionen
 
 # Other keys
-### Missing: unifieddocument.entry.name=Unified Document
-### Missing: unifieddocument.entry.create.hint=Unified document page
-### Missing: unifieddocument.entries.title=Unified Documents
+unifieddocument.entry.name=Vereinheitlichtes Dokument
+unifieddocument.entry.create.hint=Vereinheitlichte Dokumentenseite
+unifieddocument.entries.title=Vereinheitlichte Dokumente
 
 # Deprecated keys
-### Missing: unifieddocument.dataSpace.title=Data
+unifieddocument.dataSpace.title=Daten
 
 # Keys for the sections displayer
-### Missing: unifieddocument.sections.tree.add=Add
-### Missing: unifieddocument.sections.tree.remove=Remove
-### Missing: unifieddocument.sections.modal.title=Insert a new section name
-### Missing: unifieddocument.sections.modal.close=Close
-### Missing: unifieddocument.sections.modal.newSectionName=Section name
-### Missing: unifieddocument.sections.modal.cancel=Cancel
-### Missing: unifieddocument.sections.modal.submit=Submit
-### Missing: unifieddocument.sections.addingNewSection=Adding new section name… 
-### Missing: unifieddocument.sections.failedToAddSection=Failed to add the new section name
-### Missing: unifieddocument.sections.removingSection=Removing section name…
-### Missing: unifieddocument.sections.failedToRemoveSection=Failed to remove the section name
-### Missing: unifieddocument.sections.newSection.saveComment=Add new section name
-### Missing: unifieddocument.sections.removeSection.saveComment=Remove section name
-### Missing: unifieddocument.sections.empty=No section name
-### Missing: unifieddocument.sections.tree.remove.confirm=Confirm the removal of this section name?
-### Missing: unifieddocument.sections.tree.remove.confirm.yes=Yes
-### Missing: unifieddocument.sections.tree.remove.confirm.no=No
+unifieddocument.sections.tree.add=Hinzufügen
+unifieddocument.sections.tree.remove=Entfernen
+unifieddocument.sections.modal.title=Einfügen eines neuen Sektionsnamens
+unifieddocument.sections.modal.close=Schließen
+unifieddocument.sections.modal.newSectionName=Name der Sektion
+unifieddocument.sections.modal.cancel=Abbrechen
+unifieddocument.sections.modal.submit=Absenden
+unifieddocument.sections.addingNewSection=Neuen Sektionsnamen hinzufügen ... 
+unifieddocument.sections.failedToAddSection=Name der neuen Sektion konnte nicht hinzugefügt werden
+unifieddocument.sections.removingSection=Entferne Sektionsname…
+unifieddocument.sections.failedToRemoveSection=Name des Abschnitts konnte nicht entfernt werden
+unifieddocument.sections.newSection.saveComment=Neuen Sektionsnamen hinzufügen
+unifieddocument.sections.removeSection.saveComment=Sektionsnamen entfernen
+unifieddocument.sections.empty=Kein Sektionsname
+unifieddocument.sections.tree.remove.confirm=Löschung dieses Sektionsnamens bestätigen?
+unifieddocument.sections.tree.remove.confirm.yes=Ja
+unifieddocument.sections.tree.remove.confirm.no=Nein
 
 # Unified Documents TOC Panel
-panels.unifieddocument.toc.title=Inhaltsübersicht
+panels.unifieddocument.toc.title=Inhaltsverzeichnis
 unifieddocument.glossary=Glossar
 </content>
   </xwikidoc>
