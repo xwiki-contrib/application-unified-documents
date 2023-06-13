@@ -92,7 +92,7 @@
   {{/html}}
 #else
   #set($isTarget = $workflowObject.getValue('istarget') == 1)
-  #if ($isTarget)
+  #if ($isTarget || $request.getAttribute('unifiedDocument-display'))
     ## Just display the document content, as it will be included in the unified document
     $doc.display('content')
   #else

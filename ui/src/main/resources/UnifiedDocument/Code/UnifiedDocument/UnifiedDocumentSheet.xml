@@ -115,6 +115,7 @@
   #if ($displayGlossaryEntries)
     #set($discard = $xcontext.put('glossary-anchors-Glossary', true))
   #end
+  #set($discard = $request.setAttribute('unifiedDocument-display', true))
   {{cache id="~{~{velocity~}~}$cacheId~{~{/velocity~}~}" timeToLive="86400"}}
   {{velocity}}
   #getSections($doc.documentReference $sections)
