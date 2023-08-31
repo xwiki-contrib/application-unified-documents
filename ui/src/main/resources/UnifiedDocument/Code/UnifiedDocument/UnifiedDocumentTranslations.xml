@@ -41,6 +41,10 @@ UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Title
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Category
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Section names
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Content space
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Display Glossary section
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=Never
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Only for exports
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=Always
 
 # Sheet keys
 unifieddocument.sheet.description=This page controls how Unified Documents pages are displayed in both view and edit modes.
@@ -89,7 +93,7 @@ unifieddocument.sections.modal.newSectionName=Section name
 unifieddocument.sections.modal.cancel=Cancel
 unifieddocument.sections.modal.submit=Submit
 
-unifieddocument.sections.addingNewSection=Adding new section name… 
+unifieddocument.sections.addingNewSection=Adding new section name…
 unifieddocument.sections.failedToAddSection=Failed to add the new section name
 unifieddocument.sections.removingSection=Removing section name…
 unifieddocument.sections.failedToRemoveSection=Failed to remove the section name

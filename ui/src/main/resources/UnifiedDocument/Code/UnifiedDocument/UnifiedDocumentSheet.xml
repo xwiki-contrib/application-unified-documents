@@ -60,7 +60,7 @@
 }))
 #set ($discard = $doc.use($object))
 #set ($editing = $xcontext.action == 'edit')
-#set ($displayGlossaryEntries = $xcontext.action == "export" || "$!{request.displayGlossaryEntries}" == '1')
+#set ($displayGlossaryEntries = $object.getValue('displayGlossary') == 'always' || ($object.getValue('displayGlossary') == 'onExport' &amp;&amp; $xcontext.action == 'export') || "$!{request.displayGlossaryEntries}" == '1')
 #if ($editing || $request.action == 'configure')
   {{html wiki="true" clean="false"}}
   &lt;div class="xform"&gt;
@@ -99,6 +99,14 @@
         &lt;/label&gt;
       &lt;/dt&gt;
       &lt;dd&gt;$doc.display('contentSpace')&lt;/dd&gt;
+      &lt;dt #if (!$editing &amp;&amp; $hasEdit)
+          data-property="$escapetool.xml($services.model.serialize($object.getPropertyReference('displayGlossary')))"
+          data-property-type="object"#end&gt;
+        &lt;label#if ($editing) for="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_0_displayGlossary"#end&gt;
+          $escapetool.xml($doc.displayPrettyName('displayGlossary', false, false))
+        &lt;/label&gt;
+      &lt;/dt&gt;
+      &lt;dd&gt;$doc.display('displayGlossary')&lt;/dd&gt;
     &lt;/dl&gt;
   &lt;/div&gt;
   {{/html}}

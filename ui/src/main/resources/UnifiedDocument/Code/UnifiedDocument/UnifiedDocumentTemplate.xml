@@ -107,6 +107,31 @@
         <valueField/>
         <classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
       </contentSpace>
+      <displayGlossary>
+        <cache>0</cache>
+        <customDisplay/>
+        <defaultValue>onExport</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <hint/>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>displayGlossary</name>
+        <number>5</number>
+        <picker>1</picker>
+        <prettyName>displayGlossary</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <sort/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>never|onExport|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </displayGlossary>
       <sections>
         <customDisplay>{{include reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionDisplayer"/}}</customDisplay>
         <disabled>0</disabled>
@@ -139,6 +164,9 @@
     </property>
     <property>
       <contentSpace/>
+    </property>
+    <property>
+      <displayGlossary/>
     </property>
   </object>
 </xwikidoc>
