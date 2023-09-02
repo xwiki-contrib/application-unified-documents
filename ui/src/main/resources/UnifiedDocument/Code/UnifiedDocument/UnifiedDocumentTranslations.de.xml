@@ -41,6 +41,10 @@ UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titel
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Kategorie
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Namen der Sektionen
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Inhaltlicher Raum
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Glossarbereich anzeigen
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=Nie
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Nur für Exporte
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=Immer
 
 # Sheet keys
 unifieddocument.sheet.description=Diese Seite steuert, wie die Seiten von Unified Documents im Anzeige- und Bearbeitungsmodus angezeigt werden.
@@ -87,7 +91,7 @@ unifieddocument.sections.modal.close=Schließen
 unifieddocument.sections.modal.newSectionName=Name der Sektion
 unifieddocument.sections.modal.cancel=Abbrechen
 unifieddocument.sections.modal.submit=Absenden
-unifieddocument.sections.addingNewSection=Neuen Sektionsnamen hinzufügen ... 
+unifieddocument.sections.addingNewSection=Neuen Sektionsnamen hinzufügen …
 unifieddocument.sections.failedToAddSection=Name der neuen Sektion konnte nicht hinzugefügt werden
 unifieddocument.sections.removingSection=Entferne Sektionsname…
 unifieddocument.sections.failedToRemoveSection=Name des Abschnitts konnte nicht entfernt werden
