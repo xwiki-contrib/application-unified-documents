@@ -1,1 +1,109 @@
+<?xml version="1.1" encoding="UTF-8"?>
 
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations" locale="ko">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentTranslations</name>
+  <language>ko</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=제목
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=범주
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=섹션 이름
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=콘텐츠 공간
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=용어집 섹션 표시
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=절대
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=수출에만 해당
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=언제나
+
+# Sheet keys
+unifieddocument.sheet.description=이 페이지는 보기 모드와 편집 모드 모두에서 통합 문서 페이지가 표시되는 방식을 제어합니다.
+unifieddocument.sheet.noObject=상태가 {0}명의 사용자로 변경되었습니다.
+unifieddocument.sheet.noFields=페이지의 전체 업데이트를 수신하지만 아무것도 보내지 않습니다.
+unifieddocument.sheet.noSectionPublished=이 섹션은 게시되지 않습니다.
+
+# Live table generic keys
+unifieddocument.livetable.doc.title=페이지 제목
+unifieddocument.livetable.doc.name=페이지 이름
+unifieddocument.livetable.doc.space=공간
+unifieddocument.livetable.doc.fullname=페이지 전체 이름
+unifieddocument.livetable.doc.location=위치
+unifieddocument.livetable.doc.author=마지막 저자
+unifieddocument.livetable.doc.creator=창조자
+unifieddocument.livetable.doc.date=날짜
+unifieddocument.livetable.doc.creationDate=생산 일
+unifieddocument.livetable._avatar=화신
+unifieddocument.livetable._images=이미지
+unifieddocument.livetable._attachments=변경 요청 에서 기존 변경 사항이 새로 고쳐졌습니다.
+unifieddocument.livetable._actions=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.livetable._actions.edit=승인자 목록을 업데이트했습니다.
+unifieddocument.livetable._actions.delete=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.livetable.emptyvalue=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+
+# Live table specific keys
+unifieddocument.livetable.title=삭제 진행 중...
+unifieddocument.livetable.category=삭제 진행 중...
+unifieddocument.livetable.sections=삭제 진행 중...
+
+# Other keys
+unifieddocument.entry.name=삭제 진행 중...
+unifieddocument.entry.create.hint=삭제 진행 중...
+unifieddocument.entries.title=삭제 진행 중...
+
+# Deprecated keys
+unifieddocument.dataSpace.title=삭제 진행 중...
+
+# Keys for the sections displayer
+unifieddocument.sections.tree.add=삭제 진행 중...
+unifieddocument.sections.tree.remove=삭제 진행 중...
+unifieddocument.sections.modal.title=삭제 진행 중...
+unifieddocument.sections.modal.close=삭제 진행 중...
+unifieddocument.sections.modal.newSectionName=삭제 진행 중...
+unifieddocument.sections.modal.cancel=삭제 진행 중...
+unifieddocument.sections.modal.submit=삭제 진행 중...
+unifieddocument.sections.addingNewSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
+unifieddocument.sections.failedToAddSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
+unifieddocument.sections.removingSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
+unifieddocument.sections.failedToRemoveSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
+unifieddocument.sections.newSection.saveComment=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.sections.removeSection.saveComment=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.sections.empty=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.sections.tree.remove.confirm=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
+unifieddocument.sections.tree.remove.confirm.yes=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.sections.tree.remove.confirm.no=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+
+# Unified Documents TOC Panel
+panels.unifieddocument.toc.title=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.glossary=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+</content>
+  </xwikidoc>
