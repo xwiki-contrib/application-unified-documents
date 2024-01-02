@@ -64,46 +64,46 @@ unifieddocument.livetable.doc.date=날짜
 unifieddocument.livetable.doc.creationDate=생산 일
 unifieddocument.livetable._avatar=화신
 unifieddocument.livetable._images=이미지
-unifieddocument.livetable._attachments=변경 요청 에서 기존 변경 사항이 새로 고쳐졌습니다.
-unifieddocument.livetable._actions=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.livetable._attachments=변경 요청 에서 기존 변경 사항이 새로 고쳐졌습니다
+unifieddocument.livetable._actions=행위
 unifieddocument.livetable._actions.edit=승인자 목록을 업데이트했습니다.
-unifieddocument.livetable._actions.delete=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.livetable.emptyvalue=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.livetable._actions.delete=삭제
+unifieddocument.livetable.emptyvalue=-
 
 # Live table specific keys
-unifieddocument.livetable.title=삭제 진행 중...
-unifieddocument.livetable.category=삭제 진행 중...
-unifieddocument.livetable.sections=삭제 진행 중...
+unifieddocument.livetable.title=제목
+unifieddocument.livetable.category=범주
+unifieddocument.livetable.sections=섹션 이름
 
 # Other keys
-unifieddocument.entry.name=삭제 진행 중...
-unifieddocument.entry.create.hint=삭제 진행 중...
-unifieddocument.entries.title=삭제 진행 중...
+unifieddocument.entry.name=통합 문서
+unifieddocument.entry.create.hint=통합 문서 페이지
+unifieddocument.entries.title=통합 문서
 
 # Deprecated keys
-unifieddocument.dataSpace.title=삭제 진행 중...
+unifieddocument.dataSpace.title=데이터
 
 # Keys for the sections displayer
-unifieddocument.sections.tree.add=삭제 진행 중...
-unifieddocument.sections.tree.remove=삭제 진행 중...
-unifieddocument.sections.modal.title=삭제 진행 중...
-unifieddocument.sections.modal.close=삭제 진행 중...
-unifieddocument.sections.modal.newSectionName=삭제 진행 중...
-unifieddocument.sections.modal.cancel=삭제 진행 중...
-unifieddocument.sections.modal.submit=삭제 진행 중...
-unifieddocument.sections.addingNewSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-unifieddocument.sections.failedToAddSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-unifieddocument.sections.removingSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-unifieddocument.sections.failedToRemoveSection=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-unifieddocument.sections.newSection.saveComment=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.sections.removeSection.saveComment=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.sections.empty=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.sections.tree.remove.confirm=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
-unifieddocument.sections.tree.remove.confirm.yes=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.sections.tree.remove.confirm.no=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+unifieddocument.sections.tree.add=추가하다
+unifieddocument.sections.tree.remove=제거하다
+unifieddocument.sections.modal.title=새 섹션 이름 삽입
+unifieddocument.sections.modal.close=닫다
+unifieddocument.sections.modal.newSectionName=섹션 이름
+unifieddocument.sections.modal.cancel=취소
+unifieddocument.sections.modal.submit=제출하다
+unifieddocument.sections.addingNewSection=새 섹션 이름을 추가하는 중…
+unifieddocument.sections.failedToAddSection=새 섹션 이름을 추가하지 못했습니다
+unifieddocument.sections.removingSection=섹션 이름 삭제 중…
+unifieddocument.sections.failedToRemoveSection=섹션 이름을 삭제하지 못했습니다
+unifieddocument.sections.newSection.saveComment=새 섹션 이름 추가
+unifieddocument.sections.removeSection.saveComment=섹션 이름 삭제
+unifieddocument.sections.empty=섹션 이름 없음
+unifieddocument.sections.tree.remove.confirm=이 섹션 이름 삭제를 확인하시겠습니까?
+unifieddocument.sections.tree.remove.confirm.yes=예
+unifieddocument.sections.tree.remove.confirm.no=아니요
 
 # Unified Documents TOC Panel
-panels.unifieddocument.toc.title=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-unifieddocument.glossary=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+panels.unifieddocument.toc.title=목차
+unifieddocument.glossary=용어 사전
 </content>
   </xwikidoc>
