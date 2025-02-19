@@ -109,7 +109,14 @@ unifieddocument.sections.tree.remove.confirm.no=No
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Table of contents
 
-unifieddocument.glossary=Glossary</content>
+unifieddocument.glossary=Glossary
+
+# Unified Document configuration
+admin.unifieddocuments=Unified Documents
+unifiedDocument.configuration.heading=Unified Documents
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Editable section names in Section contents
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Controls whether the section name of a section content can be modified after it has been created
+</content>
   <object>
     <name>UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations</name>
     <number>0</number>

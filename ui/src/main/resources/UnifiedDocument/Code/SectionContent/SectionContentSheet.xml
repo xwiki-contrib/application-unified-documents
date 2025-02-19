@@ -55,11 +55,11 @@
   'language': $xcontext.locale
 }))
 #set ($discard = $doc.use($object))
-#set ($discard = $xwiki.jsx.use('UnifiedDocument.Code.SectionContent.SectionContentSheet'))
 #set ($editing = $xcontext.action == 'edit')
 ## Check if the section content has its workflow that is not initialized. If so, it means that we need to define the target.
 #set($workflowObject = $doc.getObject('PublicationWorkflow.PublicationWorkflowClass'))
 #if ($editing &amp;&amp; "$!{workflowObject.getValue('target')}" == '')
+  #set ($discard = $xwiki.jsx.use('UnifiedDocument.Code.SectionContent.SectionContentSheet'))
   ## Display a pre-creation page, allowing to choose the section to which the content applies to, and also to choose the workflow
   {{html wiki="true" clean="false"}}
   &lt;div class="xform"&gt;
@@ -108,6 +108,18 @@
           &lt;/label&gt;
         &lt;/dt&gt;
         &lt;dd&gt;$doc.display('title')&lt;/dd&gt;
+        ## Allow the modification of the section propery if the application is configured to do so
+        #set ($configPage = $xwiki.getDocument('UnifiedDocument.Code.UnifiedDocumentConfiguration'))
+        #set ($config = $configPage.getObject('UnifiedDocument.Code.UnifiedDocumentConfigurationClass'))
+        #set ($editableSectionNames = $config.getValue('editableSectionNames'))
+        #if ($editing &amp;&amp; $editableSectionNames)
+          &lt;dt&gt;
+            &lt;label for="UnifiedDocument.Code.SectionContent.SectionContentClass_0_section"&gt;
+              $escapetool.xml($doc.displayPrettyName('section', false, false))
+            &lt;/label&gt;
+          &lt;/dt&gt;
+          &lt;dd&gt;$doc.display('section')&lt;/dd&gt;
+        #end
         &lt;dt #if (!$editing &amp;&amp; $hasEdit)
             class="editableProperty"
             data-property="$escapetool.xml($services.model.serialize($object.getPropertyReference('content')))"
