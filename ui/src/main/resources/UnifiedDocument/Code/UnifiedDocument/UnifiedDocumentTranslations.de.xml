@@ -105,5 +105,11 @@ unifieddocument.sections.tree.remove.confirm.no=Nein
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Inhaltsverzeichnis
 unifieddocument.glossary=Glossar
+
+# Unified Document configuration
+admin.unifieddocuments=Unified Documents
+unifiedDocument.configuration.heading=Unified Documents
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Bearbeitbare Abschnittsnamen im Abschnittsinhalt
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Steuert, ob der Abschnittsname eines Abschnittsinhalts geändert werden kann, nachdem er erstellt worden ist
 </content>
 </xwikidoc>
