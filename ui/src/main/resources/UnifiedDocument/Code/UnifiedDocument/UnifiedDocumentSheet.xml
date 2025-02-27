@@ -117,8 +117,9 @@
   #set($sectionContentSpace = $doc.getValue('contentSpace'))
   ## Get the last document update date, which will be used for the cache ID
   #set($lastUnifiedDocumentUpdate = $tdoc.date.time)
+  #set($lastUnifiedDocumentSourceUpdate = $doc.date.time)
   #getLastSectionUpdateDate($doc.documentReference, $locale, $sectionContentSpace, $lastSectionUpdate)
-  #set($cacheId = "$!{doc.fullName}-$!{locale}-$!{lastUnifiedDocumentUpdate}-$!{lastSectionUpdate}-$!{xcontext.action}")
+  #set($cacheId = "$!{doc.fullName}-$!{locale}-$!{lastUnifiedDocumentUpdate}-$!{lastUnifiedDocumentSourceUpdate}-$!{lastSectionUpdate}-$!{xcontext.action}")
 
   #if ($displayGlossaryEntries)
     #set($discard = $xcontext.put('glossary-anchors-Glossary', true))
