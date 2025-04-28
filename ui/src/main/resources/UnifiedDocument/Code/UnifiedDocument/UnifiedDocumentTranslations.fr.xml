@@ -41,6 +41,10 @@ UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titre
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Catégorie
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Noms de section
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Espace de contenu
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Display Glossary section
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=Jamais
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Only for exports
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=Toujours
 
 # Sheet keys
 unifieddocument.sheet.description=Cette page contrôle la manière dont les documents unifiés sont affichés en mode vue et en mode édition.
@@ -101,5 +105,11 @@ unifieddocument.sections.modal.submit=Envoyer
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Table des matières
 unifieddocument.glossary=Glossaire
+
+# Unified Document configuration
+### Missing: admin.unifieddocuments=Unified Documents
+### Missing: unifiedDocument.configuration.heading=Unified Documents
+### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Editable section names in Section contents
+### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Controls whether the section name of a section content can be modified after it has been created
 </content>
 </xwikidoc>
