@@ -29,6 +29,7 @@
   <creator>xwiki:XWiki.Admin</creator>
   <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
+  <originalMetadataAuthor>XWiki.Admin</originalMetadataAuthor>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
   <title>UnifiedDocumentSectionDisplayer</title>
@@ -109,6 +110,7 @@
         <name>code</name>
         <number>2</number>
         <prettyName>Code</prettyName>
+        <restricted>0</restricted>
         <rows>20</rows>
         <size>50</size>
         <unmodifiable>0</unmodifiable>
@@ -158,19 +160,11 @@
     <property>
       <code>require.config({
   paths: {
-    jsTree: "$!services.webjars.url('jstree', 'jstree.min.js')",
-    JobRunner: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-job-webjar', 'jobRunner.min.js')",
-    xtree: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'tree.min.js')"
-  },
-  shim: {
-    jsTree: {
-      deps: ['jquery']
-    }
+    xtree: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'require-config.min.js')"
   }
 });
 
-
-require(['xtree', 'xwiki-selectize'], function($) {
+require(['jquery', 'xtree', 'xwiki-selectize'], function($) {
   const unifiedDocumentSectionServiceURL = "$xwiki.getURL('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionService', 'get', 'outputSyntax=plain')";
   const emptyTreeNodeLabel = "$services.localization.render('unifieddocument.sections.empty')";
   const emptyTreeNodeId = 'emptyNode';
