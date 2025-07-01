@@ -92,15 +92,15 @@ unifieddocument.sections.modal.newSectionName=Nom de section
 unifieddocument.sections.modal.cancel=Annuler
 unifieddocument.sections.modal.submit=Envoyer
 ### Missing: unifieddocument.sections.addingNewSection=Adding new section name… 
-### Missing: unifieddocument.sections.failedToAddSection=Failed to add the new section name
-### Missing: unifieddocument.sections.removingSection=Removing section name…
-### Missing: unifieddocument.sections.failedToRemoveSection=Failed to remove the section name
-### Missing: unifieddocument.sections.newSection.saveComment=Add new section name
-### Missing: unifieddocument.sections.removeSection.saveComment=Remove section name
-### Missing: unifieddocument.sections.empty=No section name
-### Missing: unifieddocument.sections.tree.remove.confirm=Confirm the removal of this section name?
-### Missing: unifieddocument.sections.tree.remove.confirm.yes=Yes
-### Missing: unifieddocument.sections.tree.remove.confirm.no=No
+unifieddocument.sections.failedToAddSection=Échec de l'ajout du nouveau nom de section
+unifieddocument.sections.removingSection=Suppression du nom de la section…
+unifieddocument.sections.failedToRemoveSection=Échec de la suppression du nom de section
+unifieddocument.sections.newSection.saveComment=Ajouter un nouveau nom de section
+unifieddocument.sections.removeSection.saveComment=Supprimer le nom de section
+unifieddocument.sections.empty=Aucun nom de section
+unifieddocument.sections.tree.remove.confirm=Confirmer la suppression de ce nom de section ?
+unifieddocument.sections.tree.remove.confirm.yes=Oui
+unifieddocument.sections.tree.remove.confirm.no=Non
 
 # Unified Documents TOC Panel
 panels.unifieddocument.toc.title=Table des matières
