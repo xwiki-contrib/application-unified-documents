@@ -41,9 +41,9 @@ UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titre
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Catégorie
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Noms de section
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Espace de contenu
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Display Glossary section
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Afficher la section du glossaire
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=Jamais
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Only for exports
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Seulement pour les exports
 UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=Toujours
 
 # Sheet keys
@@ -91,7 +91,7 @@ unifieddocument.sections.modal.close=Fermer
 unifieddocument.sections.modal.newSectionName=Nom de section
 unifieddocument.sections.modal.cancel=Annuler
 unifieddocument.sections.modal.submit=Envoyer
-### Missing: unifieddocument.sections.addingNewSection=Adding new section name… 
+unifieddocument.sections.addingNewSection=Ajout d'un nouveau nom de section…
 unifieddocument.sections.failedToAddSection=Échec de l'ajout du nouveau nom de section
 unifieddocument.sections.removingSection=Suppression du nom de la section…
 unifieddocument.sections.failedToRemoveSection=Échec de la suppression du nom de section
@@ -107,9 +107,9 @@ panels.unifieddocument.toc.title=Table des matières
 unifieddocument.glossary=Glossaire
 
 # Unified Document configuration
-### Missing: admin.unifieddocuments=Unified Documents
-### Missing: unifiedDocument.configuration.heading=Unified Documents
-### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Editable section names in Section contents
-### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Controls whether the section name of a section content can be modified after it has been created
+admin.unifieddocuments=Documents Unifiés
+unifiedDocument.configuration.heading=Documents Unifiés
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Noms de section éditables dans le contenu des Sections
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Contrôle si le nom de la section d'un contenu de section peut être modifié après sa création
 </content>
 </xwikidoc>
