@@ -261,7 +261,7 @@
       <spaces/>
     </property>
     <property>
-      <template>UnifiedDocument.Code.Category.CategoryTemplateProvider</template>
+      <template>UnifiedDocument.Code.Category.CategoryTemplate</template>
     </property>
     <property>
       <terminal>0</terminal>
