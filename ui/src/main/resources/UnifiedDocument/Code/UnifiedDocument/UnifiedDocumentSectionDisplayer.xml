@@ -29,7 +29,6 @@
   <creator>xwiki:XWiki.Admin</creator>
   <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
-  <originalMetadataAuthor>XWiki.Admin</originalMetadataAuthor>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
   <title>UnifiedDocumentSectionDisplayer</title>
@@ -158,13 +157,7 @@
       <cache>long</cache>
     </property>
     <property>
-      <code>require.config({
-  paths: {
-    xtree: "$!services.webjars.url('org.xwiki.platform:xwiki-platform-tree-webjar', 'require-config.min.js')"
-  }
-});
-
-require(['jquery', 'xtree', 'xwiki-selectize'], function($) {
+      <code>require(['jquery', 'xwiki-tree', 'xwiki-selectize'], function($) {
   const unifiedDocumentSectionServiceURL = "$xwiki.getURL('UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentSectionService', 'get', 'outputSyntax=plain')";
   const emptyTreeNodeLabel = "$services.localization.render('unifieddocument.sections.empty')";
   const emptyTreeNodeId = 'emptyNode';

@@ -62,6 +62,17 @@
       <version>${publicationWorkflow.version}</version>
       <scope>runtime</scope>
       <type>xar</type>
+      <exclusions>
+        <!-- xwiki-platform-security-bridge has been removed from the platform (banned by the
+             enforcer since parent-platform 14.x); workflow-publication still pulls it transitively
+             through api-rights, built against an older platform. Not needed at runtime on 15.10+.
+             TODO remove this as soon as we depends on a publication workflow version which don't raise any more this
+             error -->
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-security-bridge</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
