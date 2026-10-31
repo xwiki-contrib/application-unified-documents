@@ -1,0 +1,115 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.4" reference="UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentTranslations" locale="da">
+  <web>UnifiedDocument.Code.UnifiedDocument</web>
+  <name>UnifiedDocumentTranslations</name>
+  <language>da</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Class fields
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=
+### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=
+
+# Sheet keys
+### Missing: unifieddocument.sheet.description=
+### Missing: unifieddocument.sheet.noObject=
+### Missing: unifieddocument.sheet.noFields=
+### Missing: unifieddocument.sheet.noSectionPublished=
+
+# Live table generic keys
+### Missing: unifieddocument.livetable.doc.title=
+### Missing: unifieddocument.livetable.doc.name=
+### Missing: unifieddocument.livetable.doc.space=
+### Missing: unifieddocument.livetable.doc.fullname=
+### Missing: unifieddocument.livetable.doc.location=
+### Missing: unifieddocument.livetable.doc.author=
+### Missing: unifieddocument.livetable.doc.creator=
+### Missing: unifieddocument.livetable.doc.date=
+### Missing: unifieddocument.livetable.doc.creationDate=
+### Missing: unifieddocument.livetable._avatar=
+### Missing: unifieddocument.livetable._images=
+### Missing: unifieddocument.livetable._attachments=
+### Missing: unifieddocument.livetable._actions=
+### Missing: unifieddocument.livetable._actions.edit=
+### Missing: unifieddocument.livetable._actions.delete=
+### Missing: unifieddocument.livetable.emptyvalue=
+
+# Live table specific keys
+### Missing: unifieddocument.livetable.title=
+### Missing: unifieddocument.livetable.category=
+### Missing: unifieddocument.livetable.sections=
+
+# Other keys
+### Missing: unifieddocument.entry.name=
+### Missing: unifieddocument.entry.create.hint=
+### Missing: unifieddocument.entries.title=
+
+# Deprecated keys
+### Missing: unifieddocument.dataSpace.title=
+
+# Keys for the sections displayer
+### Missing: unifieddocument.sections.tree.add=
+### Missing: unifieddocument.sections.tree.remove=
+### Missing: unifieddocument.sections.modal.title=
+### Missing: unifieddocument.sections.modal.close=
+### Missing: unifieddocument.sections.modal.newSectionName=
+### Missing: unifieddocument.sections.modal.cancel=
+### Missing: unifieddocument.sections.modal.submit=
+### Missing: unifieddocument.sections.addingNewSection=
+### Missing: unifieddocument.sections.failedToAddSection=
+### Missing: unifieddocument.sections.removingSection=
+### Missing: unifieddocument.sections.failedToRemoveSection=
+### Missing: unifieddocument.sections.newSection.saveComment=
+### Missing: unifieddocument.sections.removeSection.saveComment=
+### Missing: unifieddocument.sections.empty=
+### Missing: unifieddocument.sections.tree.remove.confirm=
+### Missing: unifieddocument.sections.tree.remove.confirm.yes=
+### Missing: unifieddocument.sections.tree.remove.confirm.no=
+
+# Unified Documents TOC Panel
+### Missing: panels.unifieddocument.toc.title=
+### Missing: unifieddocument.glossary=
+
+# Unified Document configuration
+### Missing: admin.unifieddocuments=
+### Missing: unifiedDocument.configuration.heading=
+### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=
+### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=
+</content>
+</xwikidoc>
