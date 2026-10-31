@@ -37,79 +37,79 @@
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
   <content># Class fields
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=
-### Missing: UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_title=Titel
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_category=Kategori
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_sections=Afsnitsnavne
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_contentSpace=Område til indhold
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary=Vis afsnittet Ordliste
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_never=Aldrig
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_onExport=Kun ved eksport
+UnifiedDocument.Code.UnifiedDocument.UnifiedDocumentClass_displayGlossary_always=Altid
 
 # Sheet keys
-### Missing: unifieddocument.sheet.description=
-### Missing: unifieddocument.sheet.noObject=
-### Missing: unifieddocument.sheet.noFields=
-### Missing: unifieddocument.sheet.noSectionPublished=
+unifieddocument.sheet.description=Denne side styrer, hvordan siderne i Unified Documents vises i både visnings- og redigeringstilstand.
+unifieddocument.sheet.noObject=Den aktuelle side har ikke det forventede Unified Documents-objekt.
+unifieddocument.sheet.noFields=Programmet Unified Documents har ingen felter at vise.
+unifieddocument.sheet.noSectionPublished=Afsnittet er ikke udgivet.
 
 # Live table generic keys
-### Missing: unifieddocument.livetable.doc.title=
-### Missing: unifieddocument.livetable.doc.name=
-### Missing: unifieddocument.livetable.doc.space=
-### Missing: unifieddocument.livetable.doc.fullname=
-### Missing: unifieddocument.livetable.doc.location=
-### Missing: unifieddocument.livetable.doc.author=
-### Missing: unifieddocument.livetable.doc.creator=
-### Missing: unifieddocument.livetable.doc.date=
-### Missing: unifieddocument.livetable.doc.creationDate=
-### Missing: unifieddocument.livetable._avatar=
-### Missing: unifieddocument.livetable._images=
-### Missing: unifieddocument.livetable._attachments=
-### Missing: unifieddocument.livetable._actions=
-### Missing: unifieddocument.livetable._actions.edit=
-### Missing: unifieddocument.livetable._actions.delete=
-### Missing: unifieddocument.livetable.emptyvalue=
+unifieddocument.livetable.doc.title=Sidetitel
+unifieddocument.livetable.doc.name=Sidenavn
+unifieddocument.livetable.doc.space=Område
+unifieddocument.livetable.doc.fullname=Sidens fulde navn
+unifieddocument.livetable.doc.location=Placering
+unifieddocument.livetable.doc.author=Seneste forfatter
+unifieddocument.livetable.doc.creator=Opretter
+unifieddocument.livetable.doc.date=Dato
+unifieddocument.livetable.doc.creationDate=Oprettelsesdato
+unifieddocument.livetable._avatar=Avatar
+unifieddocument.livetable._images=Billeder
+unifieddocument.livetable._attachments=Bilag
+unifieddocument.livetable._actions=Handlinger
+unifieddocument.livetable._actions.edit=Rediger
+unifieddocument.livetable._actions.delete=Slet
+unifieddocument.livetable.emptyvalue=-
 
 # Live table specific keys
-### Missing: unifieddocument.livetable.title=
-### Missing: unifieddocument.livetable.category=
-### Missing: unifieddocument.livetable.sections=
+unifieddocument.livetable.title=Titel
+unifieddocument.livetable.category=Kategori
+unifieddocument.livetable.sections=Afsnitsnavne
 
 # Other keys
-### Missing: unifieddocument.entry.name=
-### Missing: unifieddocument.entry.create.hint=
-### Missing: unifieddocument.entries.title=
+unifieddocument.entry.name=Samlet dokument
+unifieddocument.entry.create.hint=Side med samlet dokument
+unifieddocument.entries.title=Samlede dokumenter
 
 # Deprecated keys
-### Missing: unifieddocument.dataSpace.title=
+unifieddocument.dataSpace.title=Data
 
 # Keys for the sections displayer
-### Missing: unifieddocument.sections.tree.add=
-### Missing: unifieddocument.sections.tree.remove=
-### Missing: unifieddocument.sections.modal.title=
-### Missing: unifieddocument.sections.modal.close=
-### Missing: unifieddocument.sections.modal.newSectionName=
-### Missing: unifieddocument.sections.modal.cancel=
-### Missing: unifieddocument.sections.modal.submit=
-### Missing: unifieddocument.sections.addingNewSection=
-### Missing: unifieddocument.sections.failedToAddSection=
-### Missing: unifieddocument.sections.removingSection=
-### Missing: unifieddocument.sections.failedToRemoveSection=
-### Missing: unifieddocument.sections.newSection.saveComment=
-### Missing: unifieddocument.sections.removeSection.saveComment=
-### Missing: unifieddocument.sections.empty=
-### Missing: unifieddocument.sections.tree.remove.confirm=
-### Missing: unifieddocument.sections.tree.remove.confirm.yes=
-### Missing: unifieddocument.sections.tree.remove.confirm.no=
+unifieddocument.sections.tree.add=Tilføj
+unifieddocument.sections.tree.remove=Fjern
+unifieddocument.sections.modal.title=Indsæt et nyt afsnitsnavn
+unifieddocument.sections.modal.close=Luk
+unifieddocument.sections.modal.newSectionName=Afsnitsnavn
+unifieddocument.sections.modal.cancel=Annuller
+unifieddocument.sections.modal.submit=Send
+unifieddocument.sections.addingNewSection=Tilføjer nyt afsnitsnavn…
+unifieddocument.sections.failedToAddSection=Det nye afsnitsnavn kunne ikke tilføjes
+unifieddocument.sections.removingSection=Fjerner afsnitsnavn…
+unifieddocument.sections.failedToRemoveSection=Afsnitsnavnet kunne ikke fjernes
+unifieddocument.sections.newSection.saveComment=Tilføj nyt afsnitsnavn
+unifieddocument.sections.removeSection.saveComment=Fjern afsnitsnavn
+unifieddocument.sections.empty=Intet afsnitsnavn
+unifieddocument.sections.tree.remove.confirm=Vil du fjerne dette afsnitsnavn?
+unifieddocument.sections.tree.remove.confirm.yes=Ja
+unifieddocument.sections.tree.remove.confirm.no=Nej
 
 # Unified Documents TOC Panel
-### Missing: panels.unifieddocument.toc.title=
-### Missing: unifieddocument.glossary=
+panels.unifieddocument.toc.title=Indholdsfortegnelse
+unifieddocument.glossary=Ordliste
 
 # Unified Document configuration
-### Missing: admin.unifieddocuments=
-### Missing: unifiedDocument.configuration.heading=
-### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=
-### Missing: UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=
+admin.unifieddocuments=Unified Documents
+unifiedDocument.configuration.heading=Unified Documents
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames=Afsnitsnavne kan redigeres i afsnitsindhold
+UnifiedDocument.Code.UnifiedDocumentConfigurationClass_editableSectionNames.hint=Styrer, om afsnitsnavnet i et afsnitsindhold kan ændres, efter det er oprettet
 </content>
 </xwikidoc>
