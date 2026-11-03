@@ -55,7 +55,7 @@
   <properties>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>UDA</xwiki.issueManagement.jira.id>
-    <publicationWorkflow.version>2.1</publicationWorkflow.version>
+    <publicationWorkflow.version>2.4.9</publicationWorkflow.version>
   </properties>
   <modules>
     <module>ui</module>
